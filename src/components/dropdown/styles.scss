@@ -2,23 +2,52 @@
   display: inline-block;
   position: relative;
 
-  > .btn {
-    color: $color-2;
-    font-size: inherit;
-    font-weight: inherit;
-    line-height: inherit;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    vertical-align: inherit;
+  .select-container {
+    position: relative;
+    display: inline-flex;
+    padding: 10px;
+
+    .selected-country {
+      font-weight: bold;
+      font-size: 60px;
+      color: $color-2;
+      position: relative;
+      pointer-events: none;
+
+      &:after {
+        // content: url('/images/icons/Dropdown-Yellow.svg');
+        position: absolute;
+        right: -30px;
+        top: 50%;
+        @include arrow(15px,4px, $color-2, 'down');
+        transform: translateY(-50%) rotate(45deg);
+      }
+    }
+
+    .dropdown-select {
+      background: transparent;
+      border: none;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+
+      .dropdown-option {
+        font-size: 16px;
+        font-weight: normal;
+      }
+
+      ::-ms-expand {
+        display: none;
+      }
+
+      option {
+        font-size: 16px;
+        font-weight: normal;
+      }
+    }
   }
 
-  .dropdown-menu.-active {
-    display: block;
-  }
 
-  .dropdown-item {
-    line-height: 1.2;
-    letter-spacing: 0;
-  }
 }

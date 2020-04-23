@@ -1,33 +1,32 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
-import Link from 'redux-first-router-link';
+import { pathToAction } from 'redux-first-router';
 
-const Dropdown = ({ options, current }) => {
-  const [isActive, toggleDropdown] = useState(false);
-  const handleClick = () => {
-    toggleDropdown(!isActive);
+import countries from 'pages/home/constants';
+import routesMap from 'config/router';
+
+const Dropdown = ({ current }) => {
+  const currentCountry = countries.find(country => country.iso === current)
+  const [country, setCountry] = useState(currentCountry.label);
+
+  const handleChange = (e) => {
+    pathToAction('/country/KEN/summary', routesMap);
+    setCountry(e.currentTarget.value);
   };
+
+  const enabledCountries = countries.filter(country => country.iso !== undefined)
+
   return (
-    <div className="c-dropdown dropdown">
-      <button className="btn dropdown-toggle" onClick={handleClick}>
-        {current.country}
-      </button>
-      <div
-        className={classnames('dropdown-menu', {
-          '-active': isActive,
-        })}
-      >
-        {options.map(({ iso, country }) => (
-          <Link
-            key={iso}
-            to={{ type: 'COUNTRY', payload: { iso, category: 'summary' } }}
-            onClick={handleClick}
-            className="dropdown-item"
-          >
-            {country}
-          </Link>
-        ))}
+    <div className="c-dropdown">
+      <div className="select-container">
+        <select className="dropdown-select" onChange={handleChange}>
+          {enabledCountries.map(({ iso, label }) => (
+            <option className="dropdown-option" key={iso} value={label}>
+              {label}
+            </option>
+          ))}
+        </select>
+        <div className="selected-country">{country}</div>
       </div>
     </div>
   );
