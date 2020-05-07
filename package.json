@@ -17,6 +17,7 @@
     "prop-types": "^15.7.2",
     "query-string": "^6.12.1",
     "react": "^16.13.1",
+    "react-app-polyfill": "^1.0.6",
     "react-csv": "^2.0.3",
     "react-dom": "^16.13.1",
     "react-ga": "^2.7.0",
@@ -54,7 +55,7 @@
       "not dead",
       "not op_mini all",
       "ie >= 11",
-      "chromeandroid >= 10",
+      "chromeandroid >= 19",
       "chrome >= 45",
       "ios >= 9"
     ],
