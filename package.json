@@ -17,7 +17,6 @@
     "prop-types": "^15.7.2",
     "query-string": "^6.12.1",
     "react": "^16.13.1",
-    "react-app-polyfill": "^1.0.6",
     "react-csv": "^2.0.3",
     "react-dom": "^16.13.1",
     "react-ga": "^2.7.0",
@@ -54,7 +53,10 @@
       ">0.2%",
       "not dead",
       "not op_mini all",
-      "iOS 9"
+      "ie >= 11",
+      "chromeandroid >= 10",
+      "chrome >= 45",
+      "ios >= 9"
     ],
     "development": [
       "last 1 chrome version",
