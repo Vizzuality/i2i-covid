@@ -54,7 +54,7 @@
       ">0.2%",
       "not dead",
       "not op_mini all",
-      "ie 8"
+      "iOS 9"
     ],
     "development": [
       "last 1 chrome version",
