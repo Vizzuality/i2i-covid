@@ -54,13 +54,6 @@ const Navigation = ({ tabs, currentTab, iso }) => {
             <MediaQuery minWidth={breakpoints.lg - 1}>
               <nav className="navigation">
                 <div id="categories" className="categories">
-                  <NavLink
-                    to={{ type: 'COUNTRY', payload: { iso, category: 'summary' } }}
-                    activeClassName="-active"
-                    isActive={(match, location) => location.payload.category === 'summary'}
-                  >
-                    Summary
-                  </NavLink>
                   {tabs.map(({ name, slug }) => (
                     <NavLink
                       key={slug}
