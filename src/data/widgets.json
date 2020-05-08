@@ -8,7 +8,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [],
-    "exclude_chart": [" ", "nan"],
+    "exclude_chart": ["No"],
     "units": "%",
     "gridspace": "one",
     "orientation": "horizontal",
@@ -57,7 +57,7 @@
   {
     "slug": "reasons-for-not-having-access-to-medicine",
     "title": "Reasons for not having accesss to medicine",
-    "hint": null,
+    "hint": "Only for respondents who answered 'yes' to 'Access to required medicine'",
     "published": true,
     "summary": false,
     "weight": "weight_ind",
@@ -221,7 +221,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [],
-    "exclude_chart": [" ", "nan", "No"],
+    "exclude_chart": ["No"],
     "units": "%",
     "gridspace": "one",
     "orientation": "horizontal",
@@ -729,7 +729,7 @@
   {
     "slug": "Source-of-borrowing",
     "title": "Source of borrowing",
-    "hint": null,
+    "hint": "for respondents who answered 'yes' to 'Recent borrowing'",
     "published": true,
     "summary": false,
     "weight": "weight_ind",
@@ -781,7 +781,7 @@
   {
     "slug": "reason-for-missed-payment",
     "title": "Reasons for missed loan repayment",
-    "hint": null,
+    "hint": "for respondents who answered 'yes' to 'Missed repayment'",
     "published": true,
     "summary": false,
     "weight": "weight_ind",
@@ -1022,7 +1022,7 @@
   {
     "slug": "farm-labour-changes",
     "title": "Current number of farm employees",
-    "hint": "compared to last year (excludes not applicable)",
+    "hint": "compared to last year",
     "published": true,
     "summary": false,
     "weight": "weight_hh",
@@ -1044,7 +1044,7 @@
   {
     "slug": "ease-of-selling-crops",
     "title": "Ease of selling crops",
-    "hint": "compared to last year (excludes not applicable)",
+    "hint": "compared to last year",
     "published": true,
     "summary": false,
     "weight": "weight_hh",
@@ -1066,7 +1066,7 @@
   {
     "slug": "economic-sector",
     "title": "Economic sector of main income earner",
-    "hint": null,
+    "hint": "for respondents whose 'Primary income source of main income earner' is 'casual labour', 'wage or salary job' or 'running own business / self employed'",
     "published": true,
     "summary": false,
     "weight": "weight_hh",
@@ -1099,7 +1099,7 @@
   {
     "slug": "main-business-challenge",
     "title": "Main business challenge",
-    "hint": "since March 1st (excludes not applicable)",
+    "hint": "since March 1st",
     "published": true,
     "summary": false,
     "weight": "weight_hh",
@@ -1142,7 +1142,7 @@
   {
     "slug": "former-job",
     "title": "Previous economic sector of main income earner",
-    "hint": null,
+    "hint": "for respondents who answered 'yes' to 'Main income earner changed jobs'",
     "published": true,
     "summary": false,
     "weight": "weight_hh",
