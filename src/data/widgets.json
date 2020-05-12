@@ -1582,7 +1582,7 @@
     "hint": null,
     "published": true,
     "summary": false,
-    "country": ["NGA", "SFA"],
+    "country": ["NGA", "ZAF"],
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [" ", "nan"],
