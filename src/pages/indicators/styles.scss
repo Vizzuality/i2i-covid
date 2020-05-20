@@ -1,0 +1,45 @@
+.l-indicators {
+
+  .indicators-content {
+    position: relative;
+
+    @media screen and (min-width: map-get($breakpoints, xlg)) {
+      margin-top: -100px;
+      min-height: 300px; //Remove when there is content
+    }
+  }
+
+  .indicators-content-decoration {
+    @media screen and (min-width: $xlg) {
+      position: relative;
+      height: 0px;
+      padding: 0 40px;
+      box-sizing: content-box;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 200px;
+        background-color: $body-bg;
+        box-shadow: 0 2px 3px 0 rgba(0,0,0,0.15);
+        content: "";
+      }
+
+      &::after {
+        position: absolute;
+        top: 200px;
+        left: 0;
+        height: 20px;
+        width: 100%;
+        content: "";
+        background-color: $body-bg;
+      }
+    }
+  }
+
+  .indicators-info {
+    padding: 50px 0;
+  }
+}
