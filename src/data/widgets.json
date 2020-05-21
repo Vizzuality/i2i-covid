@@ -78,7 +78,8 @@
       "reasons_for_not_accessing_medicine_hospital_etc_closed",
       "reasons_for_not_accessing_medicine_scared_to_buy",
       "reasons_for_not_accessing_medicine_other",
-      "reasons_for_not_accessing_medicine_dont_know"
+      "reasons_for_not_accessing_medicine_dont_know",
+      "reasons_for_not_accessing_medicine_refused"
     ],
     "chart": "multiple-stacked-bar"
   },
@@ -744,6 +745,7 @@
     "columns": [
       "source_of_borrowing_government",
       "source_of_borrowing_friends_family_community",
+      "source_of_borrowing_group",
       "source_of_borrowing_group_chama",
       "source_of_borrowing_group_chama_ajo_adashi_esusu_stokvel",
       "source_of_borrowing_sacco_cooperative",
@@ -753,7 +755,9 @@
       "source_of_borrowing_digital_app_lender",
       "source_of_borrowing_money_lender",
       "source_of_borrowing_bank",
-      "source_of_borrowing_other"
+      "source_of_borrowing_other",
+      "source_of_borrowing_dontknow",
+      "source_of_borrowing_refused"
     ],
     "chart": "multiple-stacked-bar"
   },
@@ -800,7 +804,9 @@
       "reason_for_missed_payment_lost_income",
       "reason_for_missed_payment_loan_was_forgiven",
       "reason_for_missed_payment_government_payment_holiday",
-      "reason_for_missed_payment_other"
+      "reason_for_missed_payment_dontknow",
+      "reason_for_missed_payment_other",
+      "reason_for_missed_payment_refused"
     ],
     "chart": "multiple-stacked-bar"
   },
@@ -1079,20 +1085,23 @@
     "category": "earnings",
     "order": 44,
     "columns": [
-      "current_economic_sector_cookingcleaningbabysittingdomesticwork",
-      "current_economic_sector_farmingorraisinglivestock",
-      "current_economic_sector_servicesbarberbraidinghairwelderetc",
-      "current_economic_sector_marketorsellinggoods",
+      "current_economic_sector_cooking_cleaning_baby_sitting_domestic",
+      "current_economic_sector_farming_or_raising_livestock",
+      "current_economic_sector_services_barber_braiding_hair_welder",
+      "current_economic_sector_market_or_selling_goods",
       "current_economic_sector_catering",
+      "current_economic_sector_manufacturing",
+      "current_economic_sector_casual_labourer",
+      "current_economic_sector_mining",
       "current_economic_sector_transport",
       "current_economic_sector_education",
-      "current_economic_sector_healthandsocialwork",
+      "current_economic_sector_health_and_social_work",
       "current_economic_sector_government",
-      "current_economic_sector_professionale_g_lawyeraccountant",
+      "current_economic_sector_professional_e_g_lawyer_accountant",
       "current_economic_sector_security",
       "current_economic_sector_tourism",
       "current_economic_sector_other",
-      "current_economic_sector_dontknow"
+      "current_economic_sector_dont_know"
     ],
     "chart": "multiple-stacked-bar"
   },
@@ -1155,19 +1164,22 @@
     "category": "earnings",
     "order": 46,
     "columns": [
-      "previous_economic_sector_cookingcleaningbabysittingdomesticwork",
-      "previous_economic_sector_farmingorraisinglivestock",
-      "previous_economic_sector_servicesbarberbraidinghairwelderetc",
-      "previous_economic_sector_marketorsellinggoods",
+      "previous_economic_sector_cooking_cleaning_baby_sitting_domestic",
+      "previous_economic_sector_farming_or_raising_livestock",
+      "previous_economic_sector_services_barber_braiding_hair_welder",
+      "previous_economic_sector_market_or_selling_goods",
       "previous_economic_sector_catering",
+      "previous_economic_sector_manufacturing",
+      "previous_economic_sector_casual_labourer",
+      "previous_economic_sector_mining",
       "previous_economic_sector_transport",
       "previous_economic_sector_education",
-      "previous_economic_sector_healthandsocialwork",
+      "previous_economic_sector_health_and_social_work",
       "previous_economic_sector_government",
-      "previous_economic_sector_professionale_g_lawyeraccountant",
+      "previous_economic_sector_professional_e_g_lawyer_accountant",
       "previous_economic_sector_security",
       "previous_economic_sector_other",
-      "previous_economic_sector_dontknow"
+      "previous_economic_sector_dont_know"
     ],
     "chart": "multiple-stacked-bar"
   },
