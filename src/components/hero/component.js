@@ -33,6 +33,7 @@ const Hero = ({ iso, page }) => {
                 {options && <Dropdown options={options} current={current} />}
               </h1>
             )}
+            {page === 'Indicators' && <h1 className="hero-title">Topline indicators</h1>}
             {page === 'Resources' && <h1 className="hero-title">Resources</h1>}
           </div>
         </div>
@@ -44,9 +45,16 @@ const Hero = ({ iso, page }) => {
               </div>
             </MediaQuery>
             <MediaQuery maxWidth={breakpoints.md}>
-              <div className="col-auto">
-                <PageSwitch />
-              </div>
+              {page !== 'indicators' && (
+                <div className="col-auto">
+                  <PageSwitch name="Topline indicators" type="INDICATORS" pathname="/indicators" />
+                </div>
+              )}
+              {page !== 'resources' && (
+                <div className="col-auto">
+                  <PageSwitch name="Resources" type="RESOURCES" pathname="/resources" />
+                </div>
+              )}
               <div className="col-auto">
                 <Subscribe />
               </div>

@@ -6,6 +6,7 @@ export const routes = {
   COUNTRY: '/country/:iso/:category',
   WIDGET: '/widget/:iso/:widget_slug',
   RESOURCES: '/resources',
+  INDICATORS: '/indicators',
 };
 
 export default routes;
