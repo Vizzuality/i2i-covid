@@ -13,6 +13,7 @@
     "gridspace": "one",
     "orientation": "horizontal",
     "category": "health",
+    "waves": 2,
     "order": 2,
     "columns": [
       "covid19_induced_behaviour_changes_wash_hands_more",
@@ -30,7 +31,7 @@
       "covid19_induced_behaviour_changes_other",
       "covid19_induced_behaviour_changes_dont_know"
     ],
-    "chart": "multiple-stacked-bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "access-to-medicine",
@@ -228,6 +229,7 @@
     "orientation": "horizontal",
     "category": "health",
     "order": 1,
+    "waves": 2,
     "columns": [
       "understanding_of_covid19_virus",
       "understanding_of_covid19_illness_or_disease",
@@ -238,7 +240,7 @@
       "understanding_of_covid19_other",
       "understanding_of_covid19_dont_know"
     ],
-    "chart": "multiple-stacked-bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "increase-in-household-care-due-to-covid-19",

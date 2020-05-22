@@ -47,6 +47,7 @@ export const parseStackedChart = (data, { category_order }) => {
     return obj;
   });
 
+
   return {
     config: {
       groupBy: 'update_date',
@@ -61,49 +62,26 @@ export const parseStackedChart = (data, { category_order }) => {
 
 export const parseMultipleStackedChart = (data, { columns }) => {
   const parsedData = data.map((d) => ({ ...d, answer: capitalize(d.answer) }));
-  // const groupedData = groupBy(parsedData, (d) => d.indicator);
-  // const widgetData = columns
-  //   .map((indicator) => {
-  //     const arr = groupedData[indicator];
-  //     const obj = {};
 
-  //     if (!arr) {
-  //       console.error(`Indicator ${indicator} doesn't exist`);
-  //       return null;
-  //     }
-
-  //     arr.forEach(({ answer, label, update_date, value }) => {
-  //       obj[label] = value;
-  //       obj.indicator = indicator;
-  //       obj.label = label;
-  //       obj.update_date = update_date;
-  //     });
-
-  //     return obj;
-  //   })
-  //   .filter((d) => d);
   const wavesData = groupBy(parsedData, (d) => d.update_date);
-  const widgetData = Object.keys(wavesData)
-    .map((waveKey) => {
-      const arr = wavesData[waveKey];
-      const obj = {};
+  const widgetData = Object.keys(wavesData).map((waveKey) => {
+    const arr = wavesData[waveKey];
+    const obj = {};
 
-      if (!arr) {
-        console.error(`Indicator ${waveKey} doesn't exist`);
-        return null;
-      }
+    if (!arr) {
+      console.error(`Indicator ${waveKey} doesn't exist`);
+      return null;
+    }
 
-      arr.forEach(({ answer, value }) => {
-        obj[answer] = value;
-      });
-
-      return {
-        ...obj,
-        update_date: waveKey,
-      };
+    arr.forEach(({ answer, value }) => {
+      obj[answer] = value;
     });
-  console.log(widgetData)
 
+    return {
+      ...obj,
+      update_date: waveKey,
+    };
+  });
   const categories = columns
     .map((column) => {
       const category = parsedData.find((d) => d.indicator === column);
@@ -111,7 +89,6 @@ export const parseMultipleStackedChart = (data, { columns }) => {
       return null;
     })
     .filter((cat) => cat);
-  
 
   return {
     config: {
@@ -123,7 +100,47 @@ export const parseMultipleStackedChart = (data, { columns }) => {
   };
 };
 
-export const parseMultipleChart = (data, { calc, category_order }) => {
+export const parseMultipleChart = (data, { columns }) => {
+  const parsedData = data.map((d) => ({ ...d, answer: capitalize(d.answer) }));
+
+  const wavesData = groupBy(parsedData, (d) => d.update_date);
+  const widgetData = Object.keys(wavesData).map((waveKey) => {
+    const arr = wavesData[waveKey];
+    const obj = {};
+
+    if (!arr) {
+      console.error(`Indicator ${waveKey} doesn't exist`);
+      return null;
+    }
+
+    arr.forEach(({ answer, value }) => {
+      obj[answer] = value;
+    });
+
+    return {
+      ...obj,
+      update_date: waveKey,
+    };
+  });
+  const categories = columns
+    .map((column) => {
+      const category = parsedData.find((d) => d.indicator === column);
+      if (category) return category.label;
+      return null;
+    })
+    .filter((cat) => cat);
+
+  return {
+    config: {
+      groupBy: 'update_date',
+      categories,
+      stacked: false,
+    },
+    data: widgetData,
+  };
+};
+
+export const parseGenericChart = (data, { calc, category_order }) => {
   let resultData = data;
 
   if (category_order) {
@@ -147,7 +164,7 @@ export const parseMultipleChart = (data, { calc, category_order }) => {
 };
 
 export const getWidgetProps = (data, widgetSpec) => {
-  const { calc, chart, exclude_chart, category_order, columns } = widgetSpec;
+  const { calc, chart, exclude_chart, category_order, waves, columns } = widgetSpec;
 
   // Deciding not to show some values depending on WidgetSpec
   const dataResult = data.filter((d) => !exclude_chart.includes(d.answer));
@@ -164,7 +181,11 @@ export const getWidgetProps = (data, widgetSpec) => {
     return { ...parseMultipleStackedChart(dataResult, { columns }), widgetSpec };
   }
 
-  return { ...parseMultipleChart(dataResult, { calc, category_order }), widgetSpec };
+  if (chart === 'multiple-bar' && waves && waves > 1) {
+    return { ...parseMultipleChart(dataResult, { columns }), widgetSpec };
+  }
+
+  return { ...parseGenericChart(dataResult, { calc, category_order }), widgetSpec };
 };
 
 export default { getWidgetProps };
