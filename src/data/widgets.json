@@ -70,6 +70,7 @@
     "orientation": "horizontal",
     "category": "health",
     "order": 7,
+    "waves": 2,
     "columns": [
       "reasons_for_not_accessing_medicine_did_not_have_enough_money",
       "reasons_for_not_accessing_medicine_medicines_unavailable",
@@ -82,7 +83,7 @@
       "reasons_for_not_accessing_medicine_dont_know",
       "reasons_for_not_accessing_medicine_refused"
     ],
-    "chart": "multiple-stacked-bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "price-of-basics",
@@ -744,6 +745,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 54,
+    "waves": 2,
     "columns": [
       "source_of_borrowing_government",
       "source_of_borrowing_friends_family_community",
@@ -761,7 +763,7 @@
       "source_of_borrowing_dontknow",
       "source_of_borrowing_refused"
     ],
-    "chart": "multiple-stacked-bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "missed-repayment",
@@ -799,6 +801,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 55,
+    "waves": 2,
     "columns": [
       "reason_for_missed_payment_need_money_for_essentials",
       "reason_for_missed_payment_prioritised_other_loan_payments",
@@ -810,7 +813,7 @@
       "reason_for_missed_payment_other",
       "reason_for_missed_payment_refused"
     ],
-    "chart": "multiple-stacked-bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "account-use-trends",
@@ -1086,6 +1089,7 @@
     "orientation": "horizontal",
     "category": "earnings",
     "order": 44,
+    "waves": 2,
     "columns": [
       "current_economic_sector_cooking_cleaning_baby_sitting_domestic",
       "current_economic_sector_farming_or_raising_livestock",
@@ -1105,7 +1109,7 @@
       "current_economic_sector_other",
       "current_economic_sector_dont_know"
     ],
-    "chart": "multiple-stacked-bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "main-business-challenge",
@@ -1165,6 +1169,7 @@
     "orientation": "horizontal",
     "category": "earnings",
     "order": 46,
+    "waves": 2,
     "columns": [
       "previous_economic_sector_cooking_cleaning_baby_sitting_domestic",
       "previous_economic_sector_farming_or_raising_livestock",
@@ -1183,7 +1188,7 @@
       "previous_economic_sector_other",
       "previous_economic_sector_dont_know"
     ],
-    "chart": "multiple-stacked-bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "age",
