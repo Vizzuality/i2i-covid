@@ -97,7 +97,7 @@ export const fetchIndicators = (
         GROUP BY answer, indicator, update_date, label
       )
       SELECT d.answer, d.indicator, d.label, d.update_date,
-        (d.value * 100 / SUM(d.value) OVER(PARTITION BY indicator)) as value,
+        (d.value * 100 / SUM(d.value) OVER(PARTITION BY indicator, update_date)) as value,
         SUM(d.responders) OVER() AS responders
       FROM d
       ${sortByQuery}

@@ -27,13 +27,6 @@ export const getWidgetTheme = ({ data, chart, calc, gridspace, units, iso, isMob
     };
   }
 
-  if (chart === 'multiple-stacked-bar') {
-    xAxis = {
-      label: data[0].update_date,
-      tick: false,
-    };
-  }
-
   if (chart !== 'multiple-stacked-bar') {
     xAxis = {
       axisLine: false,

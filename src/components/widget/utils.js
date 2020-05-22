@@ -1,5 +1,6 @@
 import groupBy from 'lodash/groupBy';
 import map from 'lodash/map';
+import { capitalize } from 'utils/strings';
 
 export const parseSingleChart = (data, { calc, columns }) => {
   const groupedData = groupBy(data, (d) => d.update_date);
@@ -59,40 +60,64 @@ export const parseStackedChart = (data, { category_order }) => {
 };
 
 export const parseMultipleStackedChart = (data, { columns }) => {
-  const groupedData = groupBy(data, (d) => d.indicator);
-  const widgetData = columns
-    .map((indicator) => {
-      const arr = groupedData[indicator];
+  const parsedData = data.map((d) => ({ ...d, answer: capitalize(d.answer) }));
+  // const groupedData = groupBy(parsedData, (d) => d.indicator);
+  // const widgetData = columns
+  //   .map((indicator) => {
+  //     const arr = groupedData[indicator];
+  //     const obj = {};
+
+  //     if (!arr) {
+  //       console.error(`Indicator ${indicator} doesn't exist`);
+  //       return null;
+  //     }
+
+  //     arr.forEach(({ answer, label, update_date, value }) => {
+  //       obj[label] = value;
+  //       obj.indicator = indicator;
+  //       obj.label = label;
+  //       obj.update_date = update_date;
+  //     });
+
+  //     return obj;
+  //   })
+  //   .filter((d) => d);
+  const wavesData = groupBy(parsedData, (d) => d.update_date);
+  const widgetData = Object.keys(wavesData)
+    .map((waveKey) => {
+      const arr = wavesData[waveKey];
       const obj = {};
 
       if (!arr) {
-        console.error(`Indicator ${indicator} doesn't exist`);
+        console.error(`Indicator ${waveKey} doesn't exist`);
         return null;
       }
 
-      arr.forEach(({ answer, label, update_date, value }) => {
-        obj[label] = value;
-        obj.indicator = indicator;
-        obj.label = label;
-        obj.update_date = update_date;
+      arr.forEach(({ answer, value }) => {
+        obj[answer] = value;
       });
 
-      return obj;
-    })
-    .filter((d) => d);
+      return {
+        ...obj,
+        update_date: waveKey,
+      };
+    });
+  console.log(widgetData)
 
   const categories = columns
     .map((column) => {
-      const category = data.find((d) => d.indicator === column);
+      const category = parsedData.find((d) => d.indicator === column);
       if (category) return category.label;
       return null;
     })
     .filter((cat) => cat);
+  
 
   return {
     config: {
       groupBy: 'update_date',
       categories,
+      stacked: false,
     },
     data: widgetData,
   };
