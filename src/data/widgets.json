@@ -166,6 +166,7 @@
     "orientation": "horizontal",
     "category": "food_security",
     "order": 21,
+    "category_order": ["0", "1", "2", "3", "4", "5", "6", "7"],
     "sort_by": "answer ASC",
     "columns": [
       "eaten_fewer_meals"
@@ -187,6 +188,7 @@
     "orientation": "horizontal",
     "category": "health",
     "order": 3,
+    "category_order": ["YES", "NO", "Not applicable", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "change_in_chronic_care"
@@ -300,6 +302,7 @@
     "orientation": "horizontal",
     "category": "safety",
     "order": 28,
+    "category_order": ["YES", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "past_14_days_travel"
@@ -321,6 +324,7 @@
     "orientation": "horizontal",
     "category": "safety",
     "order": 27,
+    "category_order": ["YES", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "travel_restriction"
@@ -342,6 +346,7 @@
     "orientation": "horizontal",
     "category": "safety",
     "order": 29,
+    "category_order": ["YES", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "moved_location_since_march_1st"
@@ -469,6 +474,7 @@
     "orientation": "horizontal",
     "category": "safety",
     "order": 25,
+    "category_order": ["0", "1", "2", "3", "4", "DK/Refused"],
     "sort_by": "answer ASC",
     "columns": [
       "safety_worries"
@@ -511,6 +517,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "financials",
+    "category_order": ["YES", "NO", "DK/Refused"],
     "order": 58,
     "sort_by": "answer DESC",
     "columns": [
@@ -533,6 +540,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 59,
+    "category_order": ["YES", "NO"],
     "sort_by": "answer DESC",
     "columns": [
       "emergency_food_support"
@@ -576,6 +584,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 60,
+    "category_order": ["YES", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "difficulty_accessing_government_support"
@@ -659,6 +668,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 64,
+    "category_order": ["YES", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "preferred_agent_open_closed"
@@ -724,6 +734,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 52,
+    "category_order": ["YES", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "recent_borrowing"
@@ -745,6 +756,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 54,
+    "category_order": ["YES", "NO", "Not applicable", "DK/Refused"],
     "waves": 2,
     "columns": [
       "source_of_borrowing_government",
@@ -780,6 +792,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 53,
+    "category_order": ["YES", "NO", "Not applicable", "NA/DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "missed_repayment"
@@ -831,6 +844,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 63,
+    "category_order": ["YES", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "account_use_trends"
@@ -936,6 +950,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 68,
+    "category_order": ["YES", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "sold_assets"
@@ -1149,6 +1164,7 @@
     "category": "earnings",
     "sort_by": "answer DESC",
     "order": 45,
+    "category_order": ["YES", "NO", "DK/Refused"],
     "columns": [
       "main_income_earner_jobs_change"
     ],
@@ -1440,6 +1456,7 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 82,
+    "category_order": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
     "sort_by": "answer ASC",
     "columns": [
       "hh_size"
@@ -1461,6 +1478,7 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 83,
+    "category_order": ["0", "1", "2", "3", "4", "5"],
     "sort_by": "answer ASC",
     "columns": [
       "children_under_5_years_old"
@@ -1503,6 +1521,7 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 85,
+    "category_order": ["0", "1", "2"],
     "sort_by": "answer ASC",
     "columns": [
       "people_over_60_years_old"

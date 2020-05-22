@@ -29,10 +29,10 @@ export const parseSingleChart = (data, { calc, columns }) => {
   };
 };
 
-export const parseStackedChart = (data, { category_order }) => {
+export const parseStackedChart = (data, { category_order, sort_by }) => {
   const groupedData = groupBy(data, (d) => d.update_date);
   const dates = Object.keys(groupedData);
-  const categories = category_order || map(data, 'answer').map((d) => String(d));
+  const categories = category_order || map(data, 'answer').map((d) => String(d)) || sort_by;
 
   const widgetData = dates.map((date) => {
     const arr = groupedData[date];
@@ -46,7 +46,6 @@ export const parseStackedChart = (data, { category_order }) => {
 
     return obj;
   });
-
 
   return {
     config: {
@@ -164,7 +163,7 @@ export const parseGenericChart = (data, { calc, category_order }) => {
 };
 
 export const getWidgetProps = (data, widgetSpec) => {
-  const { calc, chart, exclude_chart, category_order, waves, columns } = widgetSpec;
+  const { calc, chart, exclude_chart, category_order, sort_by, waves, columns } = widgetSpec;
 
   // Deciding not to show some values depending on WidgetSpec
   const dataResult = data.filter((d) => !exclude_chart.includes(d.answer));
@@ -174,7 +173,7 @@ export const getWidgetProps = (data, widgetSpec) => {
   }
 
   if (chart === 'stacked-bar') {
-    return { ...parseStackedChart(dataResult, { category_order }), widgetSpec };
+    return { ...parseStackedChart(dataResult, { category_order, sort_by }), widgetSpec };
   }
 
   if (chart === 'multiple-stacked-bar') {
