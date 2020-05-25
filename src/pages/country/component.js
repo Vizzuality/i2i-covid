@@ -22,8 +22,8 @@ const CountryPage = ({ page, location }) => {
   };
 
   const addSummary = (tabs, summary) => {
-    const index = tabs.findIndex((e) => e.id === summary.id);
-    index === -1 ? tabs.push(summary) : (tabs[index] = summary);
+    const index = tabs.findIndex((e) => console.log(e) || e.name === summary.name);
+    index === -1 ? tabs.unshift(summary) : (tabs[index] = summary);
   };
 
   const summary = { name: 'Summary', slug: 'summary', description: false };

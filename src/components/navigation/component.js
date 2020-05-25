@@ -10,6 +10,8 @@ import Button from 'components/button';
 const Navigation = ({ tabs, currentTab, iso }) => {
   const [isActive, toggleDropdown] = useState(false);
 
+  console.log(tabs)
+
   const handleClick = () => {
     toggleDropdown(!isActive);
   };
