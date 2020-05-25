@@ -38,7 +38,6 @@ const Summary = ({ iso, categories }) => {
               </article>
             ) : null
           )}
-          )
         </div>
       </div>
     </section>
