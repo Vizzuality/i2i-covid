@@ -18,12 +18,12 @@ const Header = ({ page }) => (
     </div>
     <div className="container">
       <div className="row">
-        <div className="col-sm-12 col-md-4">
+        <div className="col-sm-12 col-md-3">
           <a href="/">
             <img src={logo} alt="i2i Covid Logo" className="logo-img" />
           </a>
         </div>
-        <div className="col-sm-12 col-md-8 d-flex justify-content-sm-center justify-content-md-end">
+        <div className="col-sm-12 col-md-9 d-flex justify-content-sm-center justify-content-md-end">
           <div className="header-buttons">
             <MediaQuery minWidth={breakpoints.md - 1}>
               {page !== 'Indicators' && (
