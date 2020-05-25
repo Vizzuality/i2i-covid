@@ -867,6 +867,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 63,
+    "category_order": ["YES", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "account_use_trends"
@@ -1630,6 +1631,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 62,
+    "category_order": ["YES", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "account_ownership_validation"
