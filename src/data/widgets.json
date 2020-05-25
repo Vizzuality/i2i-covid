@@ -13,6 +13,7 @@
     "gridspace": "one",
     "orientation": "horizontal",
     "category": "health",
+    "waves": 2,
     "order": 2,
     "columns": [
       "covid19_induced_behaviour_changes_wash_hands_more",
@@ -30,7 +31,7 @@
       "covid19_induced_behaviour_changes_other",
       "covid19_induced_behaviour_changes_dont_know"
     ],
-    "chart": "multiple-stacked-bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "access-to-medicine",
@@ -58,17 +59,18 @@
     "slug": "reasons-for-not-having-access-to-medicine",
     "title": "Reasons for not having accesss to medicine",
     "hint": "Only for respondents who answered 'yes' to 'Access to required medicine'",
-    "published": true,
+    "published": false,
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
-    "exclude_query": [" ", "nan"],
+    "exclude_query": [" ", "", "nan"],
     "exclude_chart": ["No"],
     "units": "%",
     "gridspace": "one",
     "orientation": "horizontal",
     "category": "health",
     "order": 7,
+    "waves": 2,
     "columns": [
       "reasons_for_not_accessing_medicine_did_not_have_enough_money",
       "reasons_for_not_accessing_medicine_medicines_unavailable",
@@ -81,7 +83,7 @@
       "reasons_for_not_accessing_medicine_dont_know",
       "reasons_for_not_accessing_medicine_refused"
     ],
-    "chart": "multiple-stacked-bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "price-of-basics",
@@ -164,6 +166,7 @@
     "orientation": "horizontal",
     "category": "food_security",
     "order": 21,
+    "category_order": ["0", "1", "2", "3", "4", "5", "6", "7"],
     "sort_by": "answer ASC",
     "columns": [
       "eaten_fewer_meals"
@@ -185,6 +188,7 @@
     "orientation": "horizontal",
     "category": "health",
     "order": 3,
+    "category_order": ["YES", "NO", "Not applicable", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "change_in_chronic_care"
@@ -228,6 +232,7 @@
     "orientation": "horizontal",
     "category": "health",
     "order": 1,
+    "waves": 2,
     "columns": [
       "understanding_of_covid19_virus",
       "understanding_of_covid19_illness_or_disease",
@@ -238,7 +243,7 @@
       "understanding_of_covid19_other",
       "understanding_of_covid19_dont_know"
     ],
-    "chart": "multiple-stacked-bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "increase-in-household-care-due-to-covid-19",
@@ -297,6 +302,7 @@
     "orientation": "horizontal",
     "category": "safety",
     "order": 28,
+    "category_order": ["YES", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "past_14_days_travel"
@@ -318,6 +324,7 @@
     "orientation": "horizontal",
     "category": "safety",
     "order": 27,
+    "category_order": ["YES", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "travel_restriction"
@@ -339,6 +346,7 @@
     "orientation": "horizontal",
     "category": "safety",
     "order": 29,
+    "category_order": ["YES", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "moved_location_since_march_1st"
@@ -466,6 +474,7 @@
     "orientation": "horizontal",
     "category": "safety",
     "order": 25,
+    "category_order": ["1 - Not at all worried", "2", "3", "4", "5 - Extremely worried", "DK/Refused"],
     "sort_by": "answer ASC",
     "columns": [
       "safety_worries"
@@ -508,6 +517,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "financials",
+    "category_order": ["YES", "NO", "DK/Refused"],
     "order": 58,
     "sort_by": "answer DESC",
     "columns": [
@@ -530,6 +540,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 59,
+    "category_order": ["YES", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "emergency_food_support"
@@ -551,7 +562,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 57,
-    "category_order": ["7 days worth of rice", "Equivalent value in cash", "INDIFFERENT / DON'T MIND", "DK/Refused"],
+    "category_order": ["7 days worth of rice", "7 days worth of maize or mielie meal", "Equivalent value in cash", "INDIFFERENT / DON'T MIND", "DK/Refused"],
     "sort_by": "value ASC",
     "columns": [
       "govt_support_preference"
@@ -573,6 +584,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 60,
+    "category_order": ["YES", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "difficulty_accessing_government_support"
@@ -656,6 +668,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 64,
+    "category_order": ["YES", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "preferred_agent_open_closed"
@@ -721,6 +734,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 52,
+    "category_order": ["YES", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "recent_borrowing"
@@ -742,6 +756,8 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 54,
+    "category_order": ["YES", "NO", "Not applicable", "DK/Refused"],
+    "waves": 2,
     "columns": [
       "source_of_borrowing_government",
       "source_of_borrowing_friends_family_community",
@@ -759,7 +775,7 @@
       "source_of_borrowing_dontknow",
       "source_of_borrowing_refused"
     ],
-    "chart": "multiple-stacked-bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "missed-repayment",
@@ -776,6 +792,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 53,
+    "category_order": ["YES", "NO", "Not applicable", "NA/DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "missed_repayment"
@@ -797,6 +814,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 55,
+    "waves": 2,
     "columns": [
       "reason_for_missed_payment_need_money_for_essentials",
       "reason_for_missed_payment_prioritised_other_loan_payments",
@@ -808,7 +826,7 @@
       "reason_for_missed_payment_other",
       "reason_for_missed_payment_refused"
     ],
-    "chart": "multiple-stacked-bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "account-use-trends",
@@ -826,6 +844,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 63,
+    "category_order": ["YES"],
     "sort_by": "answer DESC",
     "columns": [
       "account_use_trends"
@@ -848,6 +867,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 63,
+    "category_order": ["YES", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "account_use_trends"
@@ -931,6 +951,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 68,
+    "category_order": ["YES", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "sold_assets"
@@ -940,7 +961,7 @@
   {
     "slug": "financia-health-access-to-support",
     "title": "Emergency funds availability",
-    "hint": "Possibility to come up with 1/20th GNI in 7 days for sudden need",
+    "hint": "Possibility to come up with 1/20th GNI in 7 days for sudden need",
     "published": true,
     "summary": true,
     "weight": "weight_ind",
@@ -974,7 +995,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 51,
-    "category_order": ["Regular earnings", "Working more", "Savings", "Gift from friends / family", "Loan from friends / family" , "Loan from employer", "Loan from shopkeeper", "Loan from Chama", "Loan from moneylender", "Borrow from financial institution", "Selling or pawning assets", "Other [specify]"],
+    "category_order": ["Regular earnings", "Working more", "Savings", "Gift from friends / family", "Loan from friends / family" , "Loan from employer", "Loan from shopkeeper", "Loan from Chama", "Loan from Ajo/ Adashi / Esusu", "Loan from Stokvel / group", "Loan from moneylender", "Borrow from financial institution", "Selling or pawning assets", "Other [specify]", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "finhealth_sources"
@@ -1084,6 +1105,7 @@
     "orientation": "horizontal",
     "category": "earnings",
     "order": 44,
+    "waves": 2,
     "columns": [
       "current_economic_sector_cooking_cleaning_baby_sitting_domestic",
       "current_economic_sector_farming_or_raising_livestock",
@@ -1103,7 +1125,7 @@
       "current_economic_sector_other",
       "current_economic_sector_dont_know"
     ],
-    "chart": "multiple-stacked-bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "main-business-challenge",
@@ -1120,7 +1142,7 @@
     "orientation": "horizontal",
     "category": "earnings",
     "order": 40,
-    "category_order": ["No challenges", "Unable to get supplies / cost of supplies increased", "Cannot leave the house / Travel and transport restrictions", "Markets are closed", "Fewer customers", "Unable to access the needed funds to support your operations or obligations", "Workers are not coming to work", "Clients are late paying invoiced work / services already provided", "Unable to pay other expenses", "Unable to pay staff wages", "Other [specify]", "DON'T KNOW"],
+    "category_order": ["No challenges", "Unable to get supplies / cost of supplies increased", "Cannot leave the house / Travel and transport restrictions", "Markets are closed", "Fewer customers", "Unable to access the needed funds to support your operations or obligations", "Workers are not coming to work", "Clients are late paying invoiced work / services already provided", "Unable to pay other expenses", "Unable to pay staff wages", "Other [specify]", "DK/Refused"],
     "sort_by": "answer ASC",
     "columns": [
       "biggest_business_challenge"
@@ -1143,6 +1165,7 @@
     "category": "earnings",
     "sort_by": "answer DESC",
     "order": 45,
+    "category_order": ["YES", "NO", "DK/Refused"],
     "columns": [
       "main_income_earner_jobs_change"
     ],
@@ -1163,6 +1186,7 @@
     "orientation": "horizontal",
     "category": "earnings",
     "order": 46,
+    "waves": 2,
     "columns": [
       "previous_economic_sector_cooking_cleaning_baby_sitting_domestic",
       "previous_economic_sector_farming_or_raising_livestock",
@@ -1181,7 +1205,7 @@
       "previous_economic_sector_other",
       "previous_economic_sector_dont_know"
     ],
-    "chart": "multiple-stacked-bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "age",
@@ -1192,7 +1216,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "weight": "weight_ind",
-    "calc": "percentage",
+    "calc": "percentage_no_date",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
@@ -1213,7 +1237,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "weight": "weight_ind",
-    "calc": "percentage",
+    "calc": "percentage_no_date",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
@@ -1232,7 +1256,7 @@
     "published": true,
     "summary": false,
     "weight": "weight_ind",
-    "calc": "percentage",
+    "calc": "percentage_no_date",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
@@ -1254,7 +1278,7 @@
     "summary": false,
     "country": ["ZAF"],
     "weight": "weight_ind",
-    "calc": "percentage",
+    "calc": "percentage_no_date",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
@@ -1275,7 +1299,7 @@
     "published": true,
     "summary": true,
     "weight": "weight_ind",
-    "calc": "percentage",
+    "calc": "percentage_no_date",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
@@ -1296,7 +1320,7 @@
     "published": true,
     "summary": false,
     "weight": "weight_ind",
-    "calc": "percentage",
+    "calc": "percentage_no_date",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
@@ -1317,7 +1341,7 @@
     "published": false,
     "summary": false,
     "weight": "weight_ind",
-    "calc": "percentage",
+    "calc": "percentage_no_date",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
@@ -1338,7 +1362,7 @@
     "published": false,
     "summary": false,
     "weight": "weight_ind",
-    "calc": "percentage",
+    "calc": "percentage_no_date",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
@@ -1360,7 +1384,7 @@
     "published": true,
     "summary": false,
     "weight": "weight_ind",
-    "calc": "percentage",
+    "calc": "percentage_no_date",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
@@ -1425,7 +1449,7 @@
     "published": true,
     "summary": false,
     "weight": "weight_hh",
-    "calc": "percentage",
+    "calc": "percentage_no_date",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
@@ -1446,7 +1470,7 @@
     "published": true,
     "summary": false,
     "weight": "weight_hh",
-    "calc": "percentage",
+    "calc": "percentage_no_date",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
@@ -1467,7 +1491,7 @@
     "published": false,
     "summary": false,
     "weight": "weight_hh",
-    "calc": "percentage",
+    "calc": "percentage_no_date",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
@@ -1488,7 +1512,7 @@
     "published": true,
     "summary": false,
     "weight": "weight_hh",
-    "calc": "percentage",
+    "calc": "percentage_no_date",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
@@ -1509,7 +1533,7 @@
     "published": false,
     "summary": false,
     "weight": "weight_ind",
-    "calc": "percentage",
+        "calc": "percentage_no_date",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
@@ -1530,7 +1554,7 @@
     "published": true,
     "summary": false,
     "weight": "weight_ind",
-    "calc": "percentage",
+        "calc": "percentage_no_date",
     "exclude_query": ["null", " "],
     "exclude_chart": [],
     "units": "%",
@@ -1559,7 +1583,7 @@
     "orientation": "horizontal",
     "category": "earnings",
     "order": 38,
-    "category_order": ["You", "You and someone else equally", "Your spouse", "Other family member", "Other"],
+    "category_order": ["You", "You and someone else equally", "Your spouse", "Other family member", "Other", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "main_income_earner"
@@ -1582,6 +1606,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 62,
+    "category_order": ["YES", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "account_ownership_validation"
@@ -1604,6 +1629,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 62,
+    "category_order": ["YES", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "account_ownership_validation"

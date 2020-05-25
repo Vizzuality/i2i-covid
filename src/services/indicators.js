@@ -63,6 +63,45 @@ export const fetchIndicators = (
       LEFT JOIN covid_metadata m ON m.field_name = indicator
       ${sortByQuery}
     `;
+  } else if (calc === 'percentage_no_date') {
+    const selectQuery = columns.join(', ');
+    const valuesQuery = columns
+      .map((column) => `(a.${column}, '${column}', a.${weight})`)
+      .join(', ');
+    const undefinedValues = exclude_query.map((param) => `'${param}'`);
+    const whereQuery = undefinedValues.length
+      ? `answer NOT IN (${undefinedValues.join(',')}) AND`
+      : '';
+
+    query = `
+    WITH a as (
+      SELECT ${selectQuery}, ${weight}
+      FROM ${process.env.REACT_APP_DATA_TABLENAME}
+      WHERE country_iso = '${iso}' ${filtersQuery}
+    ), b as (
+      SELECT t.*
+      FROM a
+      CROSS JOIN LATERAL (
+        VALUES ${valuesQuery}
+      ) AS t(answer, indicator, ${weight})
+    ), c as (
+      SELECT b.answer, b.indicator, b.${weight}, m.label
+      FROM b
+      LEFT JOIN covid_metadata m ON m.field_name = indicator
+    ), d as (
+      SELECT answer, indicator, label,
+        SUM(${weight}) AS value,
+        count(answer) AS responders
+      FROM c
+      WHERE ${whereQuery} ${weight} != 'NaN'
+      GROUP BY answer, indicator, label
+    )
+    SELECT d.answer, d.indicator, d.label,
+      (d.value * 100 / SUM(d.value) OVER(PARTITION BY indicator)) as value,
+      SUM(d.responders) OVER() AS responders
+    FROM d
+    ${sortByQuery}
+  `;
   } else {
     const selectQuery = columns.join(', ');
     const valuesQuery = columns
@@ -97,7 +136,7 @@ export const fetchIndicators = (
         GROUP BY answer, indicator, update_date, label
       )
       SELECT d.answer, d.indicator, d.label, d.update_date,
-        (d.value * 100 / SUM(d.value) OVER(PARTITION BY indicator)) as value,
+        (d.value * 100 / SUM(d.value) OVER(PARTITION BY indicator, update_date)) as value,
         SUM(d.responders) OVER() AS responders
       FROM d
       ${sortByQuery}

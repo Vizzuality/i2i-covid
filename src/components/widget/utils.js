@@ -1,5 +1,6 @@
 import groupBy from 'lodash/groupBy';
 import map from 'lodash/map';
+import { capitalize } from 'utils/strings';
 
 export const parseSingleChart = (data, { calc, columns }) => {
   const groupedData = groupBy(data, (d) => d.update_date);
@@ -28,10 +29,10 @@ export const parseSingleChart = (data, { calc, columns }) => {
   };
 };
 
-export const parseStackedChart = (data, { category_order }) => {
+export const parseStackedChart = (data, { calc, category_order, sort_by }) => {
   const groupedData = groupBy(data, (d) => d.update_date);
   const dates = Object.keys(groupedData);
-  const categories = category_order || map(data, 'answer').map((d) => String(d));
+  const categories = category_order || map(data, 'answer').map((d) => String(d)) || sort_by;
 
   const widgetData = dates.map((date) => {
     const arr = groupedData[date];
@@ -48,7 +49,7 @@ export const parseStackedChart = (data, { category_order }) => {
 
   return {
     config: {
-      groupBy: 'update_date',
+      groupBy: calc === 'percentage_no_date' ? 'answer' : 'update_date',
       categories,
       yAxis: {
         domain: [0, 100],
@@ -59,31 +60,30 @@ export const parseStackedChart = (data, { category_order }) => {
 };
 
 export const parseMultipleStackedChart = (data, { columns }) => {
-  const groupedData = groupBy(data, (d) => d.indicator);
-  const widgetData = columns
-    .map((indicator) => {
-      const arr = groupedData[indicator];
-      const obj = {};
+  const parsedData = data.map((d) => ({ ...d, answer: capitalize(d.answer) }));
 
-      if (!arr) {
-        console.error(`Indicator ${indicator} doesn't exist`);
-        return null;
-      }
+  const wavesData = groupBy(parsedData, (d) => d.update_date);
+  const widgetData = Object.keys(wavesData).map((waveKey) => {
+    const arr = wavesData[waveKey];
+    const obj = {};
 
-      arr.forEach(({ answer, label, update_date, value }) => {
-        obj[label] = value;
-        obj.indicator = indicator;
-        obj.label = label;
-        obj.update_date = update_date;
-      });
+    if (!arr) {
+      console.error(`Indicator ${waveKey} doesn't exist`);
+      return null;
+    }
 
-      return obj;
-    })
-    .filter((d) => d);
+    arr.forEach(({ answer, value }) => {
+      obj[answer] = value;
+    });
 
+    return {
+      ...obj,
+      update_date: waveKey,
+    };
+  });
   const categories = columns
     .map((column) => {
-      const category = data.find((d) => d.indicator === column);
+      const category = parsedData.find((d) => d.indicator === column);
       if (category) return category.label;
       return null;
     })
@@ -93,12 +93,53 @@ export const parseMultipleStackedChart = (data, { columns }) => {
     config: {
       groupBy: 'update_date',
       categories,
+      stacked: false,
     },
     data: widgetData,
   };
 };
 
-export const parseMultipleChart = (data, { calc, category_order }) => {
+export const parseMultipleChart = (data, { columns }) => {
+  const parsedData = data.map((d) => ({ ...d, answer: capitalize(d.answer) }));
+
+  const wavesData = groupBy(parsedData, (d) => d.update_date);
+  const widgetData = Object.keys(wavesData).map((waveKey) => {
+    const arr = wavesData[waveKey];
+    const obj = {};
+
+    if (!arr) {
+      console.error(`Indicator ${waveKey} doesn't exist`);
+      return null;
+    }
+
+    arr.forEach(({ answer, value }) => {
+      obj[answer] = value;
+    });
+
+    return {
+      ...obj,
+      update_date: waveKey,
+    };
+  });
+  const categories = columns
+    .map((column) => {
+      const category = parsedData.find((d) => d.indicator === column);
+      if (category) return category.label;
+      return null;
+    })
+    .filter((cat) => cat);
+
+  return {
+    config: {
+      groupBy: 'update_date',
+      categories,
+      stacked: false,
+    },
+    data: widgetData,
+  };
+};
+
+export const parseGenericChart = (data, { calc, category_order }) => {
   let resultData = data;
 
   if (category_order) {
@@ -122,7 +163,7 @@ export const parseMultipleChart = (data, { calc, category_order }) => {
 };
 
 export const getWidgetProps = (data, widgetSpec) => {
-  const { calc, chart, exclude_chart, category_order, columns } = widgetSpec;
+  const { calc, chart, exclude_chart, category_order, sort_by, waves, columns } = widgetSpec;
 
   // Deciding not to show some values depending on WidgetSpec
   const dataResult = data.filter((d) => !exclude_chart.includes(d.answer));
@@ -132,14 +173,18 @@ export const getWidgetProps = (data, widgetSpec) => {
   }
 
   if (chart === 'stacked-bar') {
-    return { ...parseStackedChart(dataResult, { category_order }), widgetSpec };
+    return { ...parseStackedChart(dataResult, { calc, category_order, sort_by }), widgetSpec };
   }
 
   if (chart === 'multiple-stacked-bar') {
     return { ...parseMultipleStackedChart(dataResult, { columns }), widgetSpec };
   }
 
-  return { ...parseMultipleChart(dataResult, { calc, category_order }), widgetSpec };
+  if (chart === 'multiple-bar' && waves && waves > 1) {
+    return { ...parseMultipleChart(dataResult, { columns }), widgetSpec };
+  }
+
+  return { ...parseGenericChart(dataResult, { calc, category_order }), widgetSpec };
 };
 
 export default { getWidgetProps };
