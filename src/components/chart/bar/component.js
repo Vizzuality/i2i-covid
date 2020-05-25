@@ -45,7 +45,6 @@ const UIBarChart = ({ data, config, widgetSpec }) => {
           <YAxis {...yAxis} />
           <Tooltip {...tooltip} />
           {categories.map((_category, index) => (
-
             <Bar
               {...bar}
               {...defaultBarProps}
