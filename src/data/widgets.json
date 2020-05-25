@@ -474,7 +474,7 @@
     "orientation": "horizontal",
     "category": "safety",
     "order": 25,
-    "category_order": ["0", "1", "2", "3", "4", "DK/Refused"],
+    "category_order": ["1 - Not at all worried", "2", "3", "4", "5 - Extremely worried", "DK/Refused"],
     "sort_by": "answer ASC",
     "columns": [
       "safety_worries"
@@ -540,7 +540,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 59,
-    "category_order": ["YES", "NO"],
+    "category_order": ["YES", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "emergency_food_support"
@@ -562,7 +562,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 57,
-    "category_order": ["7 days worth of rice", "Equivalent value in cash", "INDIFFERENT / DON'T MIND", "DK/Refused"],
+    "category_order": ["7 days worth of rice", "7 days worth of maize or mielie meal", "Equivalent value in cash", "INDIFFERENT / DON'T MIND", "DK/Refused"],
     "sort_by": "value ASC",
     "columns": [
       "govt_support_preference"
@@ -844,7 +844,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 63,
-    "category_order": ["YES", "NO", "DK/Refused"],
+    "category_order": ["YES"],
     "sort_by": "answer DESC",
     "columns": [
       "account_use_trends"
@@ -961,7 +961,7 @@
   {
     "slug": "financia-health-access-to-support",
     "title": "Emergency funds availability",
-    "hint": "Possibility to come up with 1/20th GNI in 7 days for sudden need",
+    "hint": "Possibility to come up with 1/20th GNI in 7 days for sudden need",
     "published": true,
     "summary": true,
     "weight": "weight_ind",
@@ -995,7 +995,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 51,
-    "category_order": ["Regular earnings", "Working more", "Savings", "Gift from friends / family", "Loan from friends / family" , "Loan from employer", "Loan from shopkeeper", "Loan from Chama", "Loan from moneylender", "Borrow from financial institution", "Selling or pawning assets", "Other [specify]"],
+    "category_order": ["Regular earnings", "Working more", "Savings", "Gift from friends / family", "Loan from friends / family" , "Loan from employer", "Loan from shopkeeper", "Loan from Chama", "Loan from Ajo/ Adashi / Esusu", "Loan from Stokvel / group", "Loan from moneylender", "Borrow from financial institution", "Selling or pawning assets", "Other [specify]", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "finhealth_sources"
@@ -1142,7 +1142,7 @@
     "orientation": "horizontal",
     "category": "earnings",
     "order": 40,
-    "category_order": ["No challenges", "Unable to get supplies / cost of supplies increased", "Cannot leave the house / Travel and transport restrictions", "Markets are closed", "Fewer customers", "Unable to access the needed funds to support your operations or obligations", "Workers are not coming to work", "Clients are late paying invoiced work / services already provided", "Unable to pay other expenses", "Unable to pay staff wages", "Other [specify]", "DON'T KNOW"],
+    "category_order": ["No challenges", "Unable to get supplies / cost of supplies increased", "Cannot leave the house / Travel and transport restrictions", "Markets are closed", "Fewer customers", "Unable to access the needed funds to support your operations or obligations", "Workers are not coming to work", "Clients are late paying invoiced work / services already provided", "Unable to pay other expenses", "Unable to pay staff wages", "Other [specify]", "DK/Refused"],
     "sort_by": "answer ASC",
     "columns": [
       "biggest_business_challenge"
@@ -1583,7 +1583,7 @@
     "orientation": "horizontal",
     "category": "earnings",
     "order": 38,
-    "category_order": ["You", "You and someone else equally", "Your spouse", "Other family member", "Other"],
+    "category_order": ["You", "You and someone else equally", "Your spouse", "Other family member", "Other", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "main_income_earner"
