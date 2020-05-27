@@ -60,7 +60,7 @@ export const fetchIndicators = (
       SELECT b.answer, b.indicator, b.update_date, m.label, b.answer AS value,
         COUNT(b.answer) OVER() as responders
       FROM b
-      LEFT JOIN covid_metadata m ON m.field_name = indicator
+      LEFT JOIN ${process.env.REACT_APP_METADATA_TABLENAME} m ON m.field_name = indicator
       ${sortByQuery}
     `;
   } else if (calc === 'percentage_no_date') {
@@ -87,7 +87,7 @@ export const fetchIndicators = (
     ), c as (
       SELECT b.answer, b.indicator, b.${weight}, m.label
       FROM b
-      LEFT JOIN covid_metadata m ON m.field_name = indicator
+      LEFT JOIN ${process.env.REACT_APP_METADATA_TABLENAME} m ON m.field_name = indicator
     ), d as (
       SELECT answer, indicator, label,
         SUM(${weight}) AS value,
@@ -126,7 +126,7 @@ export const fetchIndicators = (
       ), c as (
         SELECT b.answer, b.indicator, b.${weight}, b.update_date, m.label
         FROM b
-        LEFT JOIN covid_metadata m ON m.field_name = indicator
+        LEFT JOIN ${process.env.REACT_APP_METADATA_TABLENAME} m ON m.field_name = indicator
       ), d as (
         SELECT answer, indicator, label, update_date,
           SUM(${weight}) AS value,
