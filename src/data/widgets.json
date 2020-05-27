@@ -1222,7 +1222,6 @@
     "units": "%",
     "category": "demographic",
     "order": 76,
-    "waves": 2,
     "sort_by": "answer ASC",
     "columns": [
       "ps5_age_group"
@@ -1244,7 +1243,6 @@
     "units": "%",
     "category": "demographic",
     "order": 76,
-    "waves": 2,
     "sort_by": "answer DESC",
     "columns": [
       "sex"
@@ -1266,7 +1264,6 @@
     "orientation": "vertical",
     "category": "demographic",
     "order": 86,
-    "waves": 2,
     "sort_by": "value DESC",
     "columns": [
       "reduced_reporting_region"
@@ -1289,7 +1286,6 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 81,
-    "waves": 2,
     "sort_by": "answer DESC",
     "columns": [
       "race"
@@ -1311,7 +1307,6 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 80,
-    "waves": 2,
     "sort_by": "answer DESC",
     "columns": [
       "ur"
@@ -1333,7 +1328,6 @@
     "orientation": "vertical",
     "category": "demographic",
     "order": 87,
-    "waves": 2,
     "sort_by": "value DESC",
     "columns": [
       "city_name"
@@ -1355,7 +1349,6 @@
     "orientation": "vertical",
     "category": "demographic",
     "order": 89,
-    "waves": 2,
     "sort_by": "value DESC",
     "columns": [
       "nearest_city"
@@ -1377,7 +1370,6 @@
     "orientation": "vertical",
     "category": "demographic",
     "order": 88,
-    "waves": 2,
     "category_order": ["Less than 10km away", "10-20km away", "21-50km away", "5100km away", "101-200km away", "More than 200km away", "DON'T KNOW"],
     "sort_by": "answer ASC",
     "columns": [
@@ -1400,7 +1392,6 @@
     "orientation": "vertical",
     "category": "demographic",
     "order": 81,
-    "waves": 2,
     "category_order": ["Pre-primary/Other/No formal/Dont know/Refused", "Any primary / Religious", "Some secondary", "Secondary complete", "Any higher"],
     "sort_by": "answer ASC",
     "columns": [
@@ -1423,7 +1414,6 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 78,
-    "waves": 2,
     "category_order": ["Single", "Unmarried, in a relationship", "Married"],
     "sort_by": "answer DESC",
     "columns": [
@@ -1446,7 +1436,6 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 79,
-    "waves": 2,
     "sort_by": "answer DESC",
     "columns": [
       "live_with_spouse"
@@ -1468,7 +1457,6 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 82,
-    "waves": 2,
     "sort_by": "answer ASC",
     "columns": [
       "hh_size"
@@ -1490,7 +1478,6 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 83,
-    "waves": 2,
     "sort_by": "answer ASC",
     "columns": [
       "children_under_5_years_old"
@@ -1512,7 +1499,6 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 84,
-    "waves": 2,
     "sort_by": "answer ASC",
     "columns": [
       "adults_in_hh"
@@ -1534,7 +1520,6 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 85,
-    "waves": 2,
     "sort_by": "answer ASC",
     "columns": [
       "people_over_60_years_old"
@@ -1556,7 +1541,6 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 90,
-    "waves": 2,
     "sort_by": "answer DESC",
     "columns": [
       "main_earner_gender"
@@ -1578,7 +1562,6 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 91,
-    "waves": 2,
     "sort_by": "answer ASC",
     "columns": [
       "main_earner_age_group"
