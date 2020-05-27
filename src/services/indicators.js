@@ -16,7 +16,7 @@ export const fetchIndicators = (
     })
     .join('');
 
-  const sortByQuery = sort_by ? `ORDER BY ${sort_by}` : '';
+  const sortByQuery = sort_by ? `ORDER BY ${sort_by}, update_date` : 'ORDER BY update_date';
 
   if (calc === 'average') {
     const selectQuery = columns
