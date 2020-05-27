@@ -20,6 +20,8 @@ export const parseSingleChart = (data, { calc, columns }) => {
 
   const categories = map(data, calc === 'average' ? 'label' : 'answer').map((d) => String(d));
 
+  widgetData.sort((a, b) => (a.update_date > b.update_date ? 1 : -1));
+
   return {
     config: {
       groupBy: 'update_date',
@@ -47,6 +49,8 @@ export const parseStackedChart = (data, { calc, category_order, sort_by }) => {
     return obj;
   });
 
+  widgetData.sort((a, b) => (a.update_date > b.update_date ? 1 : -1));
+
   return {
     config: {
       groupBy: calc === 'percentage_no_date' ? 'answer' : 'update_date',
@@ -60,7 +64,9 @@ export const parseStackedChart = (data, { calc, category_order, sort_by }) => {
 };
 
 export const parseMultipleStackedChart = (data, { columns }) => {
-  const parsedData = data.map((d) => ({ ...d, answer: capitalize(d.answer) }));
+  const resultData = data;
+
+  const parsedData = resultData.map((d) => ({ ...d, answer: capitalize(d.answer) }));
 
   const wavesData = groupBy(parsedData, (d) => d.update_date);
   const widgetData = Object.keys(wavesData).map((waveKey) => {
@@ -88,6 +94,8 @@ export const parseMultipleStackedChart = (data, { columns }) => {
       return null;
     })
     .filter((cat) => cat);
+
+  widgetData.sort((a, b) => (a.update_date > b.update_date ? 1 : -1));
 
   return {
     config: {
@@ -129,6 +137,8 @@ export const parseMultipleChart = (data, { columns }) => {
     })
     .filter((cat) => cat);
 
+  widgetData.sort((a, b) => (a.update_date > b.update_date ? 1 : -1));
+
   return {
     config: {
       groupBy: 'update_date',
@@ -152,6 +162,8 @@ export const parseGenericChart = (data, { calc, category_order }) => {
       return d;
     });
   }
+
+  resultData.sort((a, b) => (a.update_date > b.update_date ? 1 : -1));
 
   return {
     config: {

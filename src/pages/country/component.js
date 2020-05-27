@@ -22,7 +22,7 @@ const CountryPage = ({ page, location }) => {
   };
 
   const addSummary = (tabs, summary) => {
-    const index = tabs.findIndex((e) => console.log(e) || e.name === summary.name);
+    const index = tabs.findIndex((e) => e.name === summary.name);
     index === -1 ? tabs.unshift(summary) : (tabs[index] = summary);
   };
 
