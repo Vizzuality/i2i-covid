@@ -61,7 +61,6 @@ export const parseStackedChart = (data, { calc, category_order, sort_by }) => {
 
 export const parseMultipleStackedChart = (data, { columns }) => {
   const parsedData = data.map((d) => ({ ...d, answer: capitalize(d.answer) }));
-
   const wavesData = groupBy(parsedData, (d) => d.update_date);
   const widgetData = Object.keys(wavesData).map((waveKey) => {
     const arr = wavesData[waveKey];
@@ -121,6 +120,7 @@ export const parseMultipleChart = (data, { columns }) => {
       update_date: waveKey,
     };
   });
+
   const categories = columns
     .map((column) => {
       const category = parsedData.find((d) => d.indicator === column);

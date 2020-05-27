@@ -1222,11 +1222,12 @@
     "units": "%",
     "category": "demographic",
     "order": 76,
+    "waves": 2,
     "sort_by": "answer ASC",
     "columns": [
       "ps5_age_group"
     ],
-    "chart": "multiple-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "sex",
@@ -1243,11 +1244,12 @@
     "units": "%",
     "category": "demographic",
     "order": 76,
+    "category_order": ["Woman", "Man"],
     "sort_by": "answer DESC",
     "columns": [
       "sex"
     ],
-    "chart": "multiple-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "region",
