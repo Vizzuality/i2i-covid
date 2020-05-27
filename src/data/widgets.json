@@ -1216,12 +1216,13 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "weight": "weight_ind",
-    "calc": "percentage_no_date",
+    "calc": "percentage",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
     "category": "demographic",
     "order": 76,
+    "waves": 2,
     "sort_by": "answer ASC",
     "columns": [
       "ps5_age_group"
@@ -1237,12 +1238,13 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "weight": "weight_ind",
-    "calc": "percentage_no_date",
+    "calc": "percentage",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
     "category": "demographic",
     "order": 76,
+    "waves": 2,
     "sort_by": "answer DESC",
     "columns": [
       "sex"
@@ -1256,7 +1258,7 @@
     "published": true,
     "summary": false,
     "weight": "weight_ind",
-    "calc": "percentage_no_date",
+    "calc": "percentage",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
@@ -1264,6 +1266,7 @@
     "orientation": "vertical",
     "category": "demographic",
     "order": 86,
+    "waves": 2,
     "sort_by": "value DESC",
     "columns": [
       "reduced_reporting_region"
@@ -1278,7 +1281,7 @@
     "summary": false,
     "country": ["ZAF"],
     "weight": "weight_ind",
-    "calc": "percentage_no_date",
+    "calc": "percentage",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
@@ -1286,6 +1289,7 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 81,
+    "waves": 2,
     "sort_by": "answer DESC",
     "columns": [
       "race"
@@ -1299,7 +1303,7 @@
     "published": true,
     "summary": true,
     "weight": "weight_ind",
-    "calc": "percentage_no_date",
+    "calc": "percentage",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
@@ -1307,6 +1311,7 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 80,
+    "waves": 2,
     "sort_by": "answer DESC",
     "columns": [
       "ur"
@@ -1320,7 +1325,7 @@
     "published": true,
     "summary": false,
     "weight": "weight_ind",
-    "calc": "percentage_no_date",
+    "calc": "percentage",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
@@ -1328,6 +1333,7 @@
     "orientation": "vertical",
     "category": "demographic",
     "order": 87,
+    "waves": 2,
     "sort_by": "value DESC",
     "columns": [
       "city_name"
@@ -1341,7 +1347,7 @@
     "published": false,
     "summary": false,
     "weight": "weight_ind",
-    "calc": "percentage_no_date",
+    "calc": "percentage",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
@@ -1349,6 +1355,7 @@
     "orientation": "vertical",
     "category": "demographic",
     "order": 89,
+    "waves": 2,
     "sort_by": "value DESC",
     "columns": [
       "nearest_city"
@@ -1362,7 +1369,7 @@
     "published": false,
     "summary": false,
     "weight": "weight_ind",
-    "calc": "percentage_no_date",
+    "calc": "percentage",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
@@ -1370,6 +1377,7 @@
     "orientation": "vertical",
     "category": "demographic",
     "order": 88,
+    "waves": 2,
     "category_order": ["Less than 10km away", "10-20km away", "21-50km away", "5100km away", "101-200km away", "More than 200km away", "DON'T KNOW"],
     "sort_by": "answer ASC",
     "columns": [
@@ -1384,7 +1392,7 @@
     "published": true,
     "summary": false,
     "weight": "weight_ind",
-    "calc": "percentage_no_date",
+    "calc": "percentage",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
@@ -1392,6 +1400,7 @@
     "orientation": "vertical",
     "category": "demographic",
     "order": 81,
+    "waves": 2,
     "category_order": ["Pre-primary/Other/No formal/Dont know/Refused", "Any primary / Religious", "Some secondary", "Secondary complete", "Any higher"],
     "sort_by": "answer ASC",
     "columns": [
@@ -1414,6 +1423,7 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 78,
+    "waves": 2,
     "category_order": ["Single", "Unmarried, in a relationship", "Married"],
     "sort_by": "answer DESC",
     "columns": [
@@ -1436,6 +1446,7 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 79,
+    "waves": 2,
     "sort_by": "answer DESC",
     "columns": [
       "live_with_spouse"
@@ -1449,7 +1460,7 @@
     "published": true,
     "summary": false,
     "weight": "weight_hh",
-    "calc": "percentage_no_date",
+    "calc": "percentage",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
@@ -1457,6 +1468,7 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 82,
+    "waves": 2,
     "sort_by": "answer ASC",
     "columns": [
       "hh_size"
@@ -1470,7 +1482,7 @@
     "published": true,
     "summary": false,
     "weight": "weight_hh",
-    "calc": "percentage_no_date",
+    "calc": "percentage",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
@@ -1478,6 +1490,7 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 83,
+    "waves": 2,
     "sort_by": "answer ASC",
     "columns": [
       "children_under_5_years_old"
@@ -1491,7 +1504,7 @@
     "published": false,
     "summary": false,
     "weight": "weight_hh",
-    "calc": "percentage_no_date",
+    "calc": "percentage",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
@@ -1499,6 +1512,7 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 84,
+    "waves": 2,
     "sort_by": "answer ASC",
     "columns": [
       "adults_in_hh"
@@ -1512,7 +1526,7 @@
     "published": true,
     "summary": false,
     "weight": "weight_hh",
-    "calc": "percentage_no_date",
+    "calc": "percentage",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
@@ -1520,6 +1534,7 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 85,
+    "waves": 2,
     "sort_by": "answer ASC",
     "columns": [
       "people_over_60_years_old"
@@ -1533,7 +1548,7 @@
     "published": false,
     "summary": false,
     "weight": "weight_ind",
-        "calc": "percentage_no_date",
+        "calc": "percentage",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
@@ -1541,6 +1556,7 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 90,
+    "waves": 2,
     "sort_by": "answer DESC",
     "columns": [
       "main_earner_gender"
@@ -1554,7 +1570,7 @@
     "published": true,
     "summary": false,
     "weight": "weight_ind",
-        "calc": "percentage_no_date",
+        "calc": "percentage",
     "exclude_query": ["null", " "],
     "exclude_chart": [],
     "units": "%",
@@ -1562,6 +1578,7 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 91,
+    "waves": 2,
     "sort_by": "answer ASC",
     "columns": [
       "main_earner_age_group"
