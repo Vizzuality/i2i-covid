@@ -59,7 +59,7 @@
     "slug": "reasons-for-not-having-access-to-medicine",
     "title": "Reasons for not having accesss to medicine",
     "hint": "Only for respondents who answered 'yes' to 'Access to required medicine'",
-    "published": false,
+    "published": true,
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",

@@ -30,7 +30,7 @@ export const parseSingleChart = (data, { calc }) => {
   };
 };
 
-export const parseStackedChart = (data, { calc, category_order }) => {
+export const parseStackedChart = (data, { category_order }) => {
   const groupedData = groupBy(data, (d) => d.update_date);
   const dates = Object.keys(groupedData);
   const categories = category_order || uniq(map(data, 'answer').map((d) => String(d)));
@@ -50,7 +50,7 @@ export const parseStackedChart = (data, { calc, category_order }) => {
 
   return {
     config: {
-      groupBy: calc === 'percentage_no_date' ? 'answer' : 'update_date',
+      groupBy: 'update_date',
       categories,
       yAxis: {
         domain: [0, 100],
@@ -211,7 +211,7 @@ export const getWidgetProps = (data, widgetSpec) => {
    * - sort_by attribute applied in SQL
    */
   if (chart === 'stacked-bar') {
-    return { ...parseStackedChart(dataResult, { calc, category_order }), widgetSpec };
+    return { ...parseStackedChart(dataResult, { category_order }), widgetSpec };
   }
 
   if (chart === 'multiple-stacked-bar') {
