@@ -16,7 +16,7 @@ const ToplineIndicators = ({ page }) => (
           <div className="col">
             <iframe
               title="Topline indicators content"
-              src="/indicators.html"
+              src="/indicators-content.html"
               frameBorder="0"
               width="100%"
               height="1120px"
