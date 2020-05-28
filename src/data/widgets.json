@@ -1222,7 +1222,6 @@
     "units": "%",
     "category": "demographic",
     "order": 76,
-    "waves": 2,
     "sort_by": "answer ASC",
     "columns": [
       "ps5_age_group"
@@ -1270,7 +1269,7 @@
     "columns": [
       "reduced_reporting_region"
     ],
-    "chart": "multiple-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "race",
@@ -1313,7 +1312,7 @@
     "columns": [
       "ur"
     ],
-    "chart": "multiple-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "city-name",
@@ -1334,7 +1333,7 @@
     "columns": [
       "city_name"
     ],
-    "chart": "multiple-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "nearest-city",
@@ -1399,7 +1398,7 @@
     "columns": [
       "edu_reduced"
     ],
-    "chart": "multiple-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "relationship_status",
@@ -1421,7 +1420,7 @@
     "columns": [
       "relationship_status"
     ],
-    "chart": "multiple-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "live_with_spouse",
@@ -1442,7 +1441,7 @@
     "columns": [
       "live_with_spouse"
     ],
-    "chart": "multiple-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "household-size",
@@ -1458,6 +1457,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
+    "category_order": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10 or more"],
     "order": 82,
     "sort_by": "answer ASC",
     "columns": [
@@ -1568,7 +1568,7 @@
     "columns": [
       "main_earner_age_group"
     ],
-    "chart": "multiple-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "main-income-earner",

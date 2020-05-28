@@ -1,8 +1,9 @@
 import groupBy from 'lodash/groupBy';
 import map from 'lodash/map';
 import { capitalize } from 'utils/strings';
+import uniq from 'lodash/uniq';
 
-export const parseSingleChart = (data, { calc, columns }) => {
+export const parseSingleChart = (data, { calc }) => {
   const groupedData = groupBy(data, (d) => d.update_date);
   const dates = Object.keys(groupedData);
   const widgetData = dates.map((date) => {
@@ -18,7 +19,7 @@ export const parseSingleChart = (data, { calc, columns }) => {
     return obj;
   });
 
-  const categories = map(data, calc === 'average' ? 'label' : 'answer').map((d) => String(d));
+  const categories = uniq(map(data, calc === 'average' ? 'label' : 'answer').map((d) => String(d)));
 
   return {
     config: {
@@ -29,10 +30,10 @@ export const parseSingleChart = (data, { calc, columns }) => {
   };
 };
 
-export const parseStackedChart = (data, { calc, category_order, sort_by }) => {
+export const parseStackedChart = (data, { calc, category_order }) => {
   const groupedData = groupBy(data, (d) => d.update_date);
   const dates = Object.keys(groupedData);
-  const categories = category_order || map(data, 'answer').map((d) => String(d)) || sort_by;
+  const categories = category_order || uniq(map(data, 'answer').map((d) => String(d)));
 
   const widgetData = dates.map((date) => {
     const arr = groupedData[date];
@@ -163,17 +164,54 @@ export const parseGenericChart = (data, { calc, category_order }) => {
 };
 
 export const getWidgetProps = (data, widgetSpec) => {
-  const { calc, chart, exclude_chart, category_order, sort_by, waves, columns } = widgetSpec;
+  const { calc, chart, exclude_chart, category_order, waves, columns } = widgetSpec;
 
   // Deciding not to show some values depending on WidgetSpec
   const dataResult = data.filter((d) => !exclude_chart.includes(d.answer));
 
+  /**
+   * https://recharts.org/en-US/examples/SimpleBarChart
+   *
+   * Data:
+   * [{
+   *   "update_date": "wave",
+   *   "answer1": 1,
+   *   "answer2": 2,
+   *   "answer3": 3,
+   * }]
+   * NOTE: One item per wave
+   *
+   * Categories:
+   * ["answer1", "answer2", "answer3"]
+   *
+   * Order:
+   * - category_order when exists
+   * - sort_by attribute applied in SQL
+   */
   if (chart === 'single-bar') {
-    return { ...parseSingleChart(dataResult, { calc, columns }), widgetSpec };
+    return { ...parseSingleChart(dataResult, { calc, category_order }), widgetSpec };
   }
 
+  /**
+   * https://recharts.org/en-US/examples/StackedBarChart
+   * Data format:
+   * [{
+   *   "update_date": "wave",
+   *   "answer1": 1,
+   *   "answer2": 2,
+   *   "answer3": 3,
+   * }]
+   * NOTE: One item per wave. Same as above, but including stackId.
+   *
+   * Categories:
+   * ["answer1", "answer2", "answer3"]
+   *
+   * Order:
+   * - category_order when exists
+   * - sort_by attribute applied in SQL
+   */
   if (chart === 'stacked-bar') {
-    return { ...parseStackedChart(dataResult, { calc, category_order, sort_by }), widgetSpec };
+    return { ...parseStackedChart(dataResult, { calc, category_order }), widgetSpec };
   }
 
   if (chart === 'multiple-stacked-bar') {
