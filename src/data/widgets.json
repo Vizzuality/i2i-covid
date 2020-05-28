@@ -8,7 +8,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [" ", "nan"],
-    "exclude_chart": ["No"],
+    "exclude_chart": ["No", "NO"],
     "units": "%",
     "gridspace": "one",
     "orientation": "horizontal",
@@ -1393,10 +1393,10 @@
     "orientation": "vertical",
     "category": "demographic",
     "order": 81,
-    "category_order": ["Pre-primary/Other/No formal/Dont know/Refused", "Any primary / Religious", "Some secondary", "Secondary complete", "Any higher"],
+    "category_order": ["No education", "Primary not complete", "Primary complete", "Secondary not complete", "Secondary complete", "Higher than secondary", "Other", "DK/Refused"],
     "sort_by": "answer ASC",
     "columns": [
-      "edu_reduced"
+      "education_level"
     ],
     "chart": "single-bar"
   },
