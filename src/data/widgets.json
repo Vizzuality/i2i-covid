@@ -1329,7 +1329,7 @@
     "orientation": "vertical",
     "category": "demographic",
     "order": 87,
-    "sort_by": "value DESC",
+    "sort_by": "answer ASC",
     "columns": [
       "city_name"
     ],
@@ -1560,7 +1560,7 @@
     "exclude_query": ["null", " "],
     "exclude_chart": [],
     "units": "%",
-    "gridspace": "half",
+    "gridspace": "one",
     "orientation": "horizontal",
     "category": "demographic",
     "order": 91,

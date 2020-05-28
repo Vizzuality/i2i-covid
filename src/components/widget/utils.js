@@ -112,8 +112,8 @@ export const parseMultipleChart = (data, { columns }) => {
       return null;
     }
 
-    arr.forEach(({ answer, value }) => {
-      obj[answer] = value;
+    arr.forEach(({ label, value }) => {
+      obj[label] = value;
     });
 
     return {
