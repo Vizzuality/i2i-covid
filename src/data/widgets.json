@@ -1270,7 +1270,7 @@
     "columns": [
       "reduced_reporting_region"
     ],
-    "chart": "multiple-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "race",
@@ -1313,7 +1313,7 @@
     "columns": [
       "ur"
     ],
-    "chart": "multiple-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "city-name",
@@ -1334,7 +1334,7 @@
     "columns": [
       "city_name"
     ],
-    "chart": "multiple-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "nearest-city",
@@ -1399,7 +1399,7 @@
     "columns": [
       "edu_reduced"
     ],
-    "chart": "multiple-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "relationship_status",
@@ -1421,7 +1421,7 @@
     "columns": [
       "relationship_status"
     ],
-    "chart": "multiple-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "live_with_spouse",
@@ -1442,7 +1442,7 @@
     "columns": [
       "live_with_spouse"
     ],
-    "chart": "multiple-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "household-size",
@@ -1556,7 +1556,7 @@
     "published": true,
     "summary": false,
     "weight": "weight_ind",
-        "calc": "percentage",
+    "calc": "percentage",
     "exclude_query": ["null", " "],
     "exclude_chart": [],
     "units": "%",
@@ -1568,7 +1568,7 @@
     "columns": [
       "main_earner_age_group"
     ],
-    "chart": "multiple-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "main-income-earner",
