@@ -8,7 +8,7 @@ import Pages from './pages';
 import 'styles/index.scss';
 
 ReactGA.initialize(`${process.env.REACT_APP_GOOGLE_ANALYTICS_TOKEN}`, {
-  debug: process.env !== 'production',
+  debug: process.env.NODE_ENV !== 'production',
 });
 
 const { store } = configureStore();

@@ -6,8 +6,9 @@ import Country from 'pages/country';
 import Widget from 'pages/widget';
 import NotFound from 'pages/not-found';
 import Resources from 'pages/resources';
+import Indicators from 'pages/indicators';
 
-const PagesComponents = { Home, Country, Widget, Resources, NotFound };
+const PagesComponents = { Home, Country, Widget, Resources, Indicators, NotFound };
 
 const Pages = ({ page }) => {
   const Page = PagesComponents[page];

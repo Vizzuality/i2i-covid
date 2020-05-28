@@ -21,6 +21,15 @@ const CountryPage = ({ page, location }) => {
     name: 'Summary',
   };
 
+  const addSummary = (tabs, summary) => {
+    const index = tabs.findIndex((e) => e.name === summary.name);
+    index === -1 ? tabs.unshift(summary) : (tabs[index] = summary);
+  };
+
+  const summary = { name: 'Summary', slug: 'summary', description: false };
+  const tabs = categories;
+  addSummary(tabs, summary);
+
   useEffect(() => {
     ReactGA.pageview(pathname);
   }, [pathname]);
@@ -38,10 +47,10 @@ const CountryPage = ({ page, location }) => {
               {loading && <Spinner />}
               {data && !loading && (
                 <>
-                  <Navigation tabs={categories} iso={iso} currentTab={name} />
+                  <Navigation tabs={tabs} iso={iso} currentTab={name} />
                   <div className="country-info">
                     {current === 'summary' ? (
-                      <Summary categories={categories} />
+                      <Summary categories={tabs} />
                     ) : (
                       <CardInfo
                         title={name}

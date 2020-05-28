@@ -1,7 +1,9 @@
 import groupBy from 'lodash/groupBy';
 import map from 'lodash/map';
+import { capitalize } from 'utils/strings';
+import uniq from 'lodash/uniq';
 
-export const parseSingleChart = (data, { calc, columns }) => {
+export const parseSingleChart = (data, { calc }) => {
   const groupedData = groupBy(data, (d) => d.update_date);
   const dates = Object.keys(groupedData);
   const widgetData = dates.map((date) => {
@@ -17,7 +19,7 @@ export const parseSingleChart = (data, { calc, columns }) => {
     return obj;
   });
 
-  const categories = map(data, calc === 'average' ? 'label' : 'answer').map((d) => String(d));
+  const categories = uniq(map(data, calc === 'average' ? 'label' : 'answer').map((d) => String(d)));
 
   return {
     config: {
@@ -31,7 +33,7 @@ export const parseSingleChart = (data, { calc, columns }) => {
 export const parseStackedChart = (data, { category_order }) => {
   const groupedData = groupBy(data, (d) => d.update_date);
   const dates = Object.keys(groupedData);
-  const categories = category_order || map(data, 'answer').map((d) => String(d));
+  const categories = category_order || uniq(map(data, 'answer').map((d) => String(d)));
 
   const widgetData = dates.map((date) => {
     const arr = groupedData[date];
@@ -59,31 +61,29 @@ export const parseStackedChart = (data, { category_order }) => {
 };
 
 export const parseMultipleStackedChart = (data, { columns }) => {
-  const groupedData = groupBy(data, (d) => d.indicator);
-  const widgetData = columns
-    .map((indicator) => {
-      const arr = groupedData[indicator];
-      const obj = {};
+  const parsedData = data.map((d) => ({ ...d, answer: capitalize(d.answer) }));
+  const wavesData = groupBy(parsedData, (d) => d.update_date);
+  const widgetData = Object.keys(wavesData).map((waveKey) => {
+    const arr = wavesData[waveKey];
+    const obj = {};
 
-      if (!arr) {
-        console.error(`Indicator ${indicator} doesn't exist`);
-        return null;
-      }
+    if (!arr) {
+      console.error(`Indicator ${waveKey} doesn't exist`);
+      return null;
+    }
 
-      arr.forEach(({ answer, label, update_date, value }) => {
-        obj[label] = value;
-        obj.indicator = indicator;
-        obj.label = label;
-        obj.update_date = update_date;
-      });
+    arr.forEach(({ answer, value }) => {
+      obj[answer] = value;
+    });
 
-      return obj;
-    })
-    .filter((d) => d);
-
+    return {
+      ...obj,
+      update_date: waveKey,
+    };
+  });
   const categories = columns
     .map((column) => {
-      const category = data.find((d) => d.indicator === column);
+      const category = parsedData.find((d) => d.indicator === column);
       if (category) return category.label;
       return null;
     })
@@ -93,12 +93,54 @@ export const parseMultipleStackedChart = (data, { columns }) => {
     config: {
       groupBy: 'update_date',
       categories,
+      stacked: false,
     },
     data: widgetData,
   };
 };
 
-export const parseMultipleChart = (data, { calc, category_order }) => {
+export const parseMultipleChart = (data, { columns }) => {
+  const parsedData = data.map((d) => ({ ...d, answer: capitalize(d.answer) }));
+
+  const wavesData = groupBy(parsedData, (d) => d.update_date);
+  const widgetData = Object.keys(wavesData).map((waveKey) => {
+    const arr = wavesData[waveKey];
+    const obj = {};
+
+    if (!arr) {
+      console.error(`Indicator ${waveKey} doesn't exist`);
+      return null;
+    }
+
+    arr.forEach(({ label, value }) => {
+      obj[label] = value;
+    });
+
+    return {
+      ...obj,
+      update_date: waveKey,
+    };
+  });
+
+  const categories = columns
+    .map((column) => {
+      const category = parsedData.find((d) => d.indicator === column);
+      if (category) return category.label;
+      return null;
+    })
+    .filter((cat) => cat);
+
+  return {
+    config: {
+      groupBy: 'update_date',
+      categories,
+      stacked: false,
+    },
+    data: widgetData,
+  };
+};
+
+export const parseGenericChart = (data, { calc, category_order }) => {
   let resultData = data;
 
   if (category_order) {
@@ -122,15 +164,52 @@ export const parseMultipleChart = (data, { calc, category_order }) => {
 };
 
 export const getWidgetProps = (data, widgetSpec) => {
-  const { calc, chart, exclude_chart, category_order, columns } = widgetSpec;
+  const { calc, chart, exclude_chart, category_order, waves, columns } = widgetSpec;
 
   // Deciding not to show some values depending on WidgetSpec
   const dataResult = data.filter((d) => !exclude_chart.includes(d.answer));
 
+  /**
+   * https://recharts.org/en-US/examples/SimpleBarChart
+   *
+   * Data:
+   * [{
+   *   "update_date": "wave",
+   *   "answer1": 1,
+   *   "answer2": 2,
+   *   "answer3": 3,
+   * }]
+   * NOTE: One item per wave
+   *
+   * Categories:
+   * ["answer1", "answer2", "answer3"]
+   *
+   * Order:
+   * - category_order when exists
+   * - sort_by attribute applied in SQL
+   */
   if (chart === 'single-bar') {
-    return { ...parseSingleChart(dataResult, { calc, columns }), widgetSpec };
+    return { ...parseSingleChart(dataResult, { calc, category_order }), widgetSpec };
   }
 
+  /**
+   * https://recharts.org/en-US/examples/StackedBarChart
+   * Data format:
+   * [{
+   *   "update_date": "wave",
+   *   "answer1": 1,
+   *   "answer2": 2,
+   *   "answer3": 3,
+   * }]
+   * NOTE: One item per wave. Same as above, but including stackId.
+   *
+   * Categories:
+   * ["answer1", "answer2", "answer3"]
+   *
+   * Order:
+   * - category_order when exists
+   * - sort_by attribute applied in SQL
+   */
   if (chart === 'stacked-bar') {
     return { ...parseStackedChart(dataResult, { category_order }), widgetSpec };
   }
@@ -139,7 +218,11 @@ export const getWidgetProps = (data, widgetSpec) => {
     return { ...parseMultipleStackedChart(dataResult, { columns }), widgetSpec };
   }
 
-  return { ...parseMultipleChart(dataResult, { calc, category_order }), widgetSpec };
+  if (chart === 'multiple-bar' && waves && waves > 1) {
+    return { ...parseMultipleChart(dataResult, { columns }), widgetSpec };
+  }
+
+  return { ...parseGenericChart(dataResult, { calc, category_order }), widgetSpec };
 };
 
 export default { getWidgetProps };

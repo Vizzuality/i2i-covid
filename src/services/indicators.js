@@ -16,7 +16,7 @@ export const fetchIndicators = (
     })
     .join('');
 
-  const sortByQuery = sort_by ? `ORDER BY ${sort_by}` : '';
+  const sortByQuery = sort_by ? `ORDER BY update_date, ${sort_by}` : 'ORDER BY update_date';
 
   if (calc === 'average') {
     const selectQuery = columns
@@ -60,7 +60,7 @@ export const fetchIndicators = (
       SELECT b.answer, b.indicator, b.update_date, m.label, b.answer AS value,
         COUNT(b.answer) OVER() as responders
       FROM b
-      LEFT JOIN covid_metadata m ON m.field_name = indicator
+      LEFT JOIN ${process.env.REACT_APP_METADATA_TABLENAME} m ON m.field_name = indicator
       ${sortByQuery}
     `;
   } else {
@@ -87,7 +87,7 @@ export const fetchIndicators = (
       ), c as (
         SELECT b.answer, b.indicator, b.${weight}, b.update_date, m.label
         FROM b
-        LEFT JOIN covid_metadata m ON m.field_name = indicator
+        LEFT JOIN ${process.env.REACT_APP_METADATA_TABLENAME} m ON m.field_name = indicator
       ), d as (
         SELECT answer, indicator, label, update_date,
           SUM(${weight}) AS value,
@@ -97,7 +97,7 @@ export const fetchIndicators = (
         GROUP BY answer, indicator, update_date, label
       )
       SELECT d.answer, d.indicator, d.label, d.update_date,
-        (d.value * 100 / SUM(d.value) OVER(PARTITION BY indicator)) as value,
+        (d.value * 100 / SUM(d.value) OVER(PARTITION BY indicator, update_date)) as value,
         SUM(d.responders) OVER() AS responders
       FROM d
       ${sortByQuery}

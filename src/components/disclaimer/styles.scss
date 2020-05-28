@@ -1,0 +1,18 @@
+.c-disclaimer {
+  padding: 5px 10px;
+  background-color: $color-2;
+
+  p {
+    margin: 0;
+    font-size: 9px;
+    font-family: $font-family-1;
+
+    @media screen and (min-width: map-get($breakpoints, md)) {
+      font-size: 13px;
+    }
+
+    > span {
+      font-weight: bold;
+    }
+  }
+}

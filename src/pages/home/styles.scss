@@ -16,7 +16,7 @@
 
 
   .homepage-wrapper {
-    margin-top: 120px;
+    margin-top: 160px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -94,6 +94,7 @@
       background-size: cover;
       padding: 40px;
       min-width: 100vw;
+      margin-left: 20px;
 
       > ul {
         list-style: none;

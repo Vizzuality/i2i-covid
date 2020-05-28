@@ -12,7 +12,9 @@ import { filtersData } from './constants';
 import { fetchFilter } from 'services/filters';
 
 const parseData = (data, filter) =>
-  Array.from(new Set(data.rows.map((row) => row[filter]))).map((f) => ({ label: f, value: f }));
+  Array.from(new Set(data.rows.map((row) => row[filter]))).map((f) =>
+    f !== 'over 55' ? { label: f, value: f } : { label: '55+', value: f }
+  );
 
 const Filters = ({ location, filters, resetFilters, setFilter, iso }) => {
   const { pathname, query } = location;
@@ -55,6 +57,7 @@ const Filters = ({ location, filters, resetFilters, setFilter, iso }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     setFilter(filtersResult);
+
     // Updating URL
     replace({
       pathname,
@@ -73,7 +76,6 @@ const Filters = ({ location, filters, resetFilters, setFilter, iso }) => {
     } else if (!checked && isAlready) {
       filterItem = filterItem.filter((item) => item !== value);
     }
-
     setFiltersResult({ ...filtersResult, [name]: filterItem });
   };
 
