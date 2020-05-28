@@ -6,6 +6,7 @@ const pageComponentsNames = {
   WIDGET: 'Widget',
   [NOT_FOUND]: 'NotFound',
   RESOURCES: 'Resources',
+  INDICATORS: 'Indicators',
 };
 
 export default (state = 'HOME', action = {}) => pageComponentsNames[action.type] || state;

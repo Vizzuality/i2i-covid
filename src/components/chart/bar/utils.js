@@ -7,7 +7,6 @@ const defaultLegend = {
   iconSize: 15,
   iconType: 'circle',
   formatter: capitalize,
-  // formatter: (value, entry, index) => console.log(index) || capitalize(value),
 };
 
 export const getWidgetTheme = ({ data, chart, calc, gridspace, units, iso, isMobileScreen }) => {
@@ -24,13 +23,6 @@ export const getWidgetTheme = ({ data, chart, calc, gridspace, units, iso, isMob
       wrapperStyle: {
         paddingLeft: 30,
       },
-    };
-  }
-
-  if (chart === 'multiple-stacked-bar') {
-    xAxis = {
-      label: data[0].update_date,
-      tick: false,
     };
   }
 
