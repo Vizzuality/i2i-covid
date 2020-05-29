@@ -1243,7 +1243,7 @@
     "units": "%",
     "category": "demographic",
     "order": 76,
-    "category_order": ["Woman", "Man"],
+    "category_order": ["WOMAN", "MAN"],
     "sort_by": "answer DESC",
     "columns": [
       "sex"
