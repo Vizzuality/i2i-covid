@@ -3,7 +3,7 @@ import map from 'lodash/map';
 import { capitalize } from 'utils/strings';
 import uniq from 'lodash/uniq';
 
-export const parseSingleChart = (data, { calc }) => {
+export const parseSingleChart = (data, { calc, category_order }) => {
   const groupedData = groupBy(data, (d) => d.update_date);
   const dates = Object.keys(groupedData);
   const widgetData = dates.map((date) => {
@@ -15,11 +15,10 @@ export const parseSingleChart = (data, { calc }) => {
     arr.forEach(({ value, answer, label }) => {
       obj[calc === 'average' ? label : answer] = value;
     });
-
     return obj;
   });
 
-  const categories = uniq(map(data, calc === 'average' ? 'label' : 'answer').map((d) => String(d)));
+  const categories = category_order || uniq(map(data, calc === 'average' ? 'label' : 'answer').map((d) => String(d)));
 
   return {
     config: {
