@@ -8,6 +8,10 @@
 }
 
 .recharts-legend-wrapper {
+  min-height: 50px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 
   .recharts-legend-item {
 
