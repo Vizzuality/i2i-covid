@@ -29,7 +29,6 @@ export const getWidgetTheme = ({ data, chart, calc, gridspace, units, iso, isMob
   if (chart !== 'multiple-stacked-bar') {
     xAxis = {
       axisLine: false,
-      tickFormatter: capitalize,
       tickLine: false,
       tick: {
         fontSize: '13px',

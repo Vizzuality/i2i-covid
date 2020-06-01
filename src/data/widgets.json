@@ -518,7 +518,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "category_order": ["YES", "NO", "DK/Refused"],
-    "order": 58,
+    "order": 59,
     "sort_by": "answer DESC",
     "columns": [
       "emergency_money_support"
@@ -558,10 +558,10 @@
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
-    "gridspace": "half",
+    "gridspace": "one",
     "orientation": "horizontal",
     "category": "financials",
-    "order": 57,
+    "order": 58,
     "category_order": ["Equivalent value in cash", "7 days worth of maize", "7 days worth of maize or mielie meal", "7 days worth of rice", "INDIFFERENT / DON'T MIND", "DK/Refused"],
     "sort_by": "value ASC",
     "columns": [
@@ -583,7 +583,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "financials",
-    "order": 60,
+    "order": 57,
     "category_order": ["YES", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
@@ -991,7 +991,7 @@
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
-    "gridspace": "half",
+    "gridspace": "one",
     "orientation": "horizontal",
     "category": "financials",
     "order": 51,
@@ -1243,7 +1243,7 @@
     "units": "%",
     "category": "demographic",
     "order": 76,
-    "category_order": ["Woman", "Man"],
+    "category_order": ["WOMAN", "MAN"],
     "sort_by": "answer DESC",
     "columns": [
       "sex"
