@@ -26,17 +26,6 @@ export const getWidgetTheme = ({ data, chart, calc, gridspace, units, iso, isMob
     };
   }
 
-  if (chart !== 'multiple-stacked-bar') {
-    xAxis = {
-      axisLine: false,
-      tickLine: false,
-      tick: {
-        fontSize: '13px',
-        fill: '#022732',
-      },
-    };
-  }
-
   return {
     layout: { width: '100%', height: 500 },
     cartesianGrid: {

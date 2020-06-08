@@ -64,7 +64,14 @@ UIAreaChart.propTypes = {
     colors: PropTypes.func,
   }).isRequired,
   widgetSpec: PropTypes.shape({
-    chart: PropTypes.oneOf(['single-bar', 'multiple-bar', 'stacked-bar', 'multiple-stacked-bar']),
+    chart: PropTypes.oneOf([
+      'single-bar',
+      'multiple-bar',
+      'stacked-bar',
+      'multiple-stacked-bar',
+      'line-chart',
+      'area-chart',
+    ]),
   }).isRequired,
 };
 

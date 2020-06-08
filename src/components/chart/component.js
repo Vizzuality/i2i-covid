@@ -43,11 +43,12 @@ Chart.propTypes = {
       'multiple-bar',
       'stacked-bar',
       'multiple-stacked-bar',
-      'line',
+      'line-chart',
+      'area-chart',
     ]).isRequired,
     gridspace: PropTypes.oneOf(['one', 'half']),
   }).isRequired,
-  data: PropTypes.shape({}).isRequired,
+  data: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
 
 export default Chart;
