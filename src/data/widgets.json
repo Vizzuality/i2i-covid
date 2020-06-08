@@ -2,7 +2,7 @@
   {
     "slug": "covid-19-induced-behaviour-changes",
     "title": "Covid-19 induced behaviour changes",
-    "hint": null,
+    "hint": "Personal hygiene and health",
     "published": true,
     "summary": true,
     "weight": "weight_ind",
@@ -20,18 +20,38 @@
       "covid19_induced_behaviour_changes_use_hand_sanitizer_more",
       "covid19_induced_behaviour_changes_wear_face_mask",
       "covid19_induced_behaviour_changes_cover_mouth_when_cough",
+      "covid19_induced_behaviour_changes_stock_up_on_food",
+      "covid19_induced_behaviour_changes_other",
+      "covid19_induced_behaviour_changes_dont_know"
+    ],
+    "chart": "line-chart"
+  },
+  {
+    "slug": "covid-19-induced-behaviour-changes",
+    "title": "Covid-19 induced behaviour changes",
+    "hint": "Personal relationships",
+    "published": true,
+    "summary": true,
+    "weight": "weight_ind",
+    "calc": "percentage",
+    "exclude_query": [" ", "nan"],
+    "exclude_chart": ["No", "NO"],
+    "units": "%",
+    "gridspace": "one",
+    "orientation": "horizontal",
+    "category": "health",
+    "waves": 2,
+    "order": 2,
+    "columns": [
       "covid19_induced_behaviour_changes_limit_contact_with_people",
       "covid19_induced_behaviour_changes_stay_home_more",
       "covid19_induced_behaviour_changes_go_to_work_less",
       "covid19_induced_behaviour_changes_travel_outside_home_less",
       "covid19_induced_behaviour_changes_avoid_big_groups",
       "covid19_induced_behaviour_changes_avoid_elderly",
-      "covid19_induced_behaviour_changes_avoid_clinic_or_hospital",
-      "covid19_induced_behaviour_changes_stock_up_on_food",
-      "covid19_induced_behaviour_changes_other",
-      "covid19_induced_behaviour_changes_dont_know"
+      "covid19_induced_behaviour_changes_avoid_clinic_or_hospital"
     ],
-    "chart": "multiple-bar"
+    "chart": "line-chart"
   },
   {
     "slug": "access-to-medicine",
@@ -53,7 +73,7 @@
     "columns": [
       "access_to_medicine"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "reasons-for-not-having-access-to-medicine",
@@ -83,7 +103,7 @@
       "reasons_for_not_accessing_medicine_dont_know",
       "reasons_for_not_accessing_medicine_refused"
     ],
-    "chart": "multiple-bar"
+    "chart": "line-chart"
   },
   {
     "slug": "price-of-basics",
@@ -127,7 +147,7 @@
     "columns": [
       "change_in_cost_of_medicine"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "relative-food-availability",
@@ -237,13 +257,33 @@
       "understanding_of_covid19_virus",
       "understanding_of_covid19_illness_or_disease",
       "understanding_of_covid19_not_real",
+      "understanding_of_covid19_dont_know"
+    ],
+    "chart": "line-chart"
+  },
+  {
+    "slug": "understanding-of-covid-19",
+    "title": "Understanding of Covid-19",
+    "hint": null,
+    "published": true,
+    "summary": true,
+    "weight": "weight_ind",
+    "calc": "percentage",
+    "exclude_query": [" ", "nan"],
+    "exclude_chart": ["No"],
+    "units": "%",
+    "gridspace": "one",
+    "orientation": "horizontal",
+    "category": "health",
+    "order": 1,
+    "waves": 2,
+    "columns": [
       "understanding_of_covid19_a_weapon",
       "understanding_of_covid19_conspiracy",
       "understanding_of_covid19_punishment_from_god",
-      "understanding_of_covid19_other",
-      "understanding_of_covid19_dont_know"
+      "understanding_of_covid19_other"
     ],
-    "chart": "multiple-bar"
+    "chart": "line-chart"
   },
   {
     "slug": "increase-in-household-care-due-to-covid-19",
