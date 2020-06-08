@@ -4,7 +4,7 @@ import BarChart from 'components/chart/bar';
 import LineChart from 'components/chart/line';
 
 const chartsMap = {
-  line: LineChart,
+  'line-chart': LineChart,
   'multiple-bar': BarChart,
   'multiple-stacked-bar': BarChart,
   'single-bar': BarChart,
