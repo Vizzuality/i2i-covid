@@ -668,7 +668,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 64,
-    "category_order": ["YES", "NO", "DK/Refused"],
+    "category_order": ["YES", "NO", "No - it is open and operating as usual", "No - it is open but runs out of cash", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "preferred_agent_open_closed"
@@ -772,7 +772,7 @@
       "source_of_borrowing_money_lender",
       "source_of_borrowing_bank",
       "source_of_borrowing_other",
-      "source_of_borrowing_dontknow",
+      "source_of_borrowing_dont_know",
       "source_of_borrowing_refused"
     ],
     "chart": "multiple-bar"
@@ -995,7 +995,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 51,
-    "category_order": ["Regular earnings", "Working more", "Savings", "Gift from friends / family", "Loan from friends / family" , "Loan from employer", "Loan from shopkeeper", "Loan from Chama", "Loan from Ajo/ Adashi / Esusu", "Loan from Stokvel / group", "Loan from moneylender", "Borrow from financial institution", "Selling or pawning assets", "Other [specify]", "DK/Refused"],
+    "category_order": ["Regular earnings", "Working more", "Savings", "Gift from friends / family", "Loan from friends / family" , "Loan from employer", "Loan from shopkeeper", "Loan from Chama", "Loan from Ajo/ Adashi / Esusu", "Loan from Stokvel / group", "Loan from moneylender", "Borrow from financial institution", "Selling or pawning assets", "Other [specify]", "NONE I CAN'T COME UP WITH 8500 KSH", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "finhealth_sources"
