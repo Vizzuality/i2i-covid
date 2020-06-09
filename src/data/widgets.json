@@ -169,7 +169,7 @@
     "columns": [
       "relative_food_availability"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "past-7-days-meals-eaten",
@@ -191,7 +191,7 @@
     "columns": [
       "eaten_fewer_meals"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "change-in-chronic-care",
@@ -213,7 +213,7 @@
     "columns": [
       "change_in_chronic_care"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "change-in-ease-of-getting-contraceptives",
@@ -235,7 +235,7 @@
     "columns": [
       "change_in_ease_of_getting_contraceptives"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "understanding-of-covid-19",
@@ -305,7 +305,7 @@
     "columns": [
       "increase_in_household_care_due_to_covid19"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "time-spent-caring-for-others",
@@ -347,7 +347,7 @@
     "columns": [
       "past_14_days_travel"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "gvt-travel-restriction",
@@ -369,7 +369,7 @@
     "columns": [
       "travel_restriction"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "moved-location-since-march-1st",
@@ -391,7 +391,7 @@
     "columns": [
       "moved_location_since_march_1st"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "amount-willing-to-pay-for-covid-19-vaccine",
@@ -433,7 +433,7 @@
     "columns": [
       "likeliness_to_seek_medical_attention_mild_symptoms"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "number-of-contacts",
@@ -455,7 +455,7 @@
       "number_of_contacts_with_working_age_adults",
       "number_of_contacts_with_elderly"
     ],
-    "chart": "single-bar"
+    "chart": "line-chart"
   },
   {
     "slug": "religious-group-attendance",
@@ -497,7 +497,7 @@
     "columns": [
       "where_children_stay_when_school_is_closed"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "safety-worries",
@@ -519,7 +519,7 @@
     "columns": [
       "safety_worries"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "likelihood_to_go_out_at_night",
@@ -541,7 +541,7 @@
     "columns": [
       "increase_in_crime"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "applications-to-economic-support",
@@ -563,7 +563,7 @@
     "columns": [
       "emergency_money_support"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "applications-to-food-support",
@@ -585,7 +585,7 @@
     "columns": [
       "emergency_food_support"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "government-support-preference",
@@ -607,7 +607,7 @@
     "columns": [
       "govt_support_preference"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "difficulty-accessing-government-support",
@@ -629,7 +629,7 @@
     "columns": [
       "difficulty_accessing_government_support"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "bribes-to-get-government-support",
@@ -651,7 +651,7 @@
     "columns": [
       "need_to_pay_bribes_to_get_government_support"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "government-support-during-past-moth",
@@ -713,7 +713,7 @@
     "columns": [
       "preferred_agent_open_closed"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "change-in-agent-fee",
@@ -735,7 +735,7 @@
     "columns": [
       "change_in_agent_fee"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "difficulty-sending-receiving-cash",
@@ -757,7 +757,7 @@
     "columns": [
       "difficulty_sending_receiving_cash"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "recent-borrowing",
@@ -779,7 +779,7 @@
     "columns": [
       "recent_borrowing"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "Source-of-borrowing",
@@ -815,7 +815,7 @@
       "source_of_borrowing_dont_know",
       "source_of_borrowing_refused"
     ],
-    "chart": "multiple-bar"
+    "chart": "line-chart"
   },
   {
     "slug": "missed-repayment",
@@ -837,7 +837,7 @@
     "columns": [
       "missed_repayment"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "reason-for-missed-payment",
@@ -866,7 +866,7 @@
       "reason_for_missed_payment_other",
       "reason_for_missed_payment_refused"
     ],
-    "chart": "multiple-bar"
+    "chart": "line-chart"
   },
   {
     "slug": "account-use-trends",
@@ -974,7 +974,7 @@
     "columns": [
       "one_yr_income_comparison"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "asset-sales-since-march-1st",
@@ -996,7 +996,7 @@
     "columns": [
       "sold_assets"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "financia-health-access-to-support",
@@ -1018,7 +1018,7 @@
     "columns": [
       "finhealth_possibility"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "financia-health-support-sources",
@@ -1040,7 +1040,7 @@
     "columns": [
       "finhealth_sources"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "value-of-remittances",
@@ -1062,7 +1062,7 @@
       "value_of_remittances_received",
       "value_of_remittances_sent"
     ],
-    "chart": "single-bar"
+    "chart": "line-chart"
   },
   {
     "slug": "main-income-earner-primary-income-source",
@@ -1106,7 +1106,7 @@
     "columns": [
       "farm_labour_changes"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "ease-of-selling-crops",
@@ -1128,7 +1128,7 @@
     "columns": [
       "ease_of_selling_crops"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "economic-sector",
@@ -1209,7 +1209,7 @@
     "columns": [
       "main_income_earner_jobs_change"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "former-job",
@@ -1630,7 +1630,7 @@
     "columns": [
       "main_income_earner"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "account-ownership",
@@ -1653,7 +1653,7 @@
     "columns": [
       "account_ownership_validation"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "account-ownership",
@@ -1676,7 +1676,7 @@
     "columns": [
       "account_ownership_validation"
     ],
-    "chart": "stacked-bar"
+    "chart": "area-chart"
   },
   {
     "slug": "former-closest-city",
