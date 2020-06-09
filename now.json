@@ -6,13 +6,13 @@
       "SASS_PATH": "@i2i-covid-sass_path",
       "REACT_APP_DATA_TABLENAME": "@i2i-covid-react_app_data_tablename",
       "REACT_APP_METADATA_TABLENAME": "@i2i-covid-react_app_metadata_tablename",
-      "REACT_APP_GOOGLE_ANALYTCIS_TOKEN": "@i2i-covid-react_app_google_analytcis_token",
+      "REACT_APP_GOOGLE_ANALYTCIS_TOKEN": "@i2i-covid-react_app_google_analytcis_token"
     }
   },
   "env": {
     "SASS_PATH": "@i2i-covid-sass_path",
     "REACT_APP_DATA_TABLENAME": "@i2i-covid-react_app_data_tablename",
     "REACT_APP_METADATA_TABLENAME": "@i2i-covid-react_app_metadata_tablename",
-    "REACT_APP_GOOGLE_ANALYTCIS_TOKEN": "@i2i-covid-react_app_google_analytcis_token",
+    "REACT_APP_GOOGLE_ANALYTCIS_TOKEN": "@i2i-covid-react_app_google_analytcis_token"
   }
 }
