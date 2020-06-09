@@ -14,7 +14,7 @@
     "orientation": "horizontal",
     "category": "health",
     "waves": 2,
-    "order": 2,
+    "order": 3,
     "columns": [
       "covid19_induced_behaviour_changes_wash_hands_more",
       "covid19_induced_behaviour_changes_use_hand_sanitizer_more",
@@ -41,7 +41,7 @@
     "orientation": "horizontal",
     "category": "health",
     "waves": 2,
-    "order": 2,
+    "order": 4,
     "columns": [
       "covid19_induced_behaviour_changes_limit_contact_with_people",
       "covid19_induced_behaviour_changes_stay_home_more",
@@ -67,7 +67,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "health",
-    "order": 6,
+    "order": 8,
     "category_order": ["YES", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
@@ -89,7 +89,7 @@
     "gridspace": "one",
     "orientation": "horizontal",
     "category": "health",
-    "order": 7,
+    "order": 9,
     "waves": 2,
     "columns": [
       "reasons_for_not_accessing_medicine_did_not_have_enough_money",
@@ -141,7 +141,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "health",
-    "order": 5,
+    "order": 7,
     "category_order": ["Lot more", "Little more", "The same", "Little less", "Much less", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
@@ -207,7 +207,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "health",
-    "order": 3,
+    "order": 5,
     "category_order": ["YES", "NO", "Not applicable", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
@@ -229,7 +229,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "health",
-    "order": 4,
+    "order": 6,
     "category_order": ["Easier", "The same", "Harder", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
@@ -299,7 +299,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "health",
-    "order": 9,
+    "order": 11,
     "category_order": ["YES", "No more than usual", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
@@ -321,7 +321,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "health",
-    "order": 10,
+    "order": 12,
     "columns": [
       "time_spent_caring_for_others"
     ],
@@ -427,7 +427,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "health",
-    "order": 8,
+    "order": 10,
     "category_order": ["Very likely", "Little likely", "Not at all likely", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
@@ -491,7 +491,7 @@
     "gridspace": "one",
     "orientation": "horizontal",
     "category": "health",
-    "order": 11,
+    "order": 13,
     "category_order": ["At home with parent", "At home with relative or friend", "At home by themselves", "Go with family member to work", "Outside the home with friend or relative", "Daycare / Childcare", "Other [specify]", "DK/Refused", "You have no children"],
     "sort_by": "value ASC",
     "columns": [
