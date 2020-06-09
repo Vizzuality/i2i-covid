@@ -100,7 +100,6 @@ export const parseMultipleStackedChart = (data, { columns }) => {
 
 export const parseMultipleChart = (data, { columns }) => {
   const parsedData = data.map((d) => ({ ...d, answer: capitalize(d.answer) }));
-
   const wavesData = groupBy(parsedData, (d) => d.update_date);
   const widgetData = Object.keys(wavesData).map((waveKey) => {
     const arr = wavesData[waveKey];
@@ -141,7 +140,6 @@ export const parseMultipleChart = (data, { columns }) => {
 
 export const parseGenericChart = (data, { calc, category_order }) => {
   let resultData = data;
-
   if (category_order) {
     resultData = category_order.map((category) => {
       const d = data.find(({ answer }) => category === answer);
@@ -167,6 +165,8 @@ export const getWidgetProps = (data, widgetSpec) => {
 
   // Deciding not to show some values depending on WidgetSpec
   const dataResult = data.filter((d) => !exclude_chart.includes(d.answer));
+  // const waves = data.map((d) => d.update_date);
+  // const waves_length = waves.filter((el, index) => waves.indexOf(el) === index).length;
 
   /**
    * https://recharts.org/en-US/examples/SimpleBarChart
@@ -209,7 +209,7 @@ export const getWidgetProps = (data, widgetSpec) => {
    * - category_order when exists
    * - sort_by attribute applied in SQL
    */
-  if (chart === 'stacked-bar') {
+  if (chart === 'stacked-bar' || chart === 'area-chart') {
     return { ...parseStackedChart(dataResult, { category_order }), widgetSpec };
   }
 
@@ -217,7 +217,7 @@ export const getWidgetProps = (data, widgetSpec) => {
     return { ...parseMultipleStackedChart(dataResult, { columns }), widgetSpec };
   }
 
-  if (chart === 'multiple-bar' && waves && waves > 1) {
+  if ((chart === 'multiple-bar' && waves && waves > 1) || chart === 'line-chart') {
     return { ...parseMultipleChart(dataResult, { columns }), widgetSpec };
   }
 

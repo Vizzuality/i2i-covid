@@ -10,11 +10,13 @@ import {
   Tooltip,
   Legend,
 } from 'recharts';
+import { useMediaQuery } from 'react-responsive';
 
 // constants
-import { WIDGET_THEME } from './constants';
+import { getWidgetTheme } from './utils';
 
-const UILineChart = ({ data, config }) => {
+const UILineChart = ({ data, config, widgetSpec }) => {
+  const isMobileScreen = useMediaQuery({ query: '(max-width: 1024px)' });
   const {
     layout,
     cartesianGrid,
@@ -24,13 +26,13 @@ const UILineChart = ({ data, config }) => {
     legend,
     colors: defaultColors,
     bar,
-  } = WIDGET_THEME;
+  } = getWidgetTheme({ data, ...widgetSpec, isMobileScreen, widgetSpec });
   const { groupBy, categories, colors: colorsConfig } = config;
   const colors = colorsConfig || defaultColors;
-  const defaultLineProps = { type: 'linear' };
+  const defaultLineProps = {};
 
   return (
-    <div className="pivot-chart">
+    <div className="c-chart">
       <ResponsiveContainer {...layout}>
         <LineChart data={data}>
           <CartesianGrid {...cartesianGrid} />
@@ -59,6 +61,16 @@ UILineChart.propTypes = {
     groupBy: PropTypes.string,
     categories: PropTypes.array,
     colors: PropTypes.func,
+  }).isRequired,
+  widgetSpec: PropTypes.shape({
+    chart: PropTypes.oneOf([
+      'single-bar',
+      'multiple-bar',
+      'stacked-bar',
+      'multiple-stacked-bar',
+      'line-chart',
+      'area-chart',
+    ]),
   }).isRequired,
 };
 
