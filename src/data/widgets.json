@@ -1,5 +1,5 @@
 [{
-		"slug": "covid-19-induced-behaviour-changes",
+		"slug": "covid-19-induced-behaviour-changes-1",
 		"title": "Covid-19 induced behaviour changes",
 		"hint": "Personal hygiene and health",
 		"published": true,
@@ -26,7 +26,7 @@
 		"chart": "line-chart"
 	},
 	{
-		"slug": "covid-19-induced-behaviour-changes",
+		"slug": "covid-19-induced-behaviour-changes-1",
 		"title": "Covid-19 induced behaviour changes",
 		"hint": "Personal relationships",
 		"published": true,
@@ -281,7 +281,7 @@
 		"chart": "area-chart"
 	},
 	{
-		"slug": "understanding-of-covid-19",
+		"slug": "understanding-of-covid-19-1",
 		"title": "Understanding of Covid-19",
 		"hint": null,
 		"published": true,
@@ -305,7 +305,7 @@
 		"chart": "line-chart"
 	},
 	{
-		"slug": "understanding-of-covid-19",
+		"slug": "understanding-of-covid-19-2",
 		"title": "Understanding of Covid-19",
 		"hint": null,
 		"published": true,
@@ -1052,7 +1052,7 @@
 		"exclude_query": [" ", "nan"],
 		"exclude_chart": [],
 		"units": "%",
-		"gridspace": "half",
+		"gridspace": "one",
 		"orientation": "horizontal",
 		"category": "financials",
 		"order": 50,
@@ -1373,7 +1373,7 @@
 		"weight": "weight_hh",
 		"calc": "percentage",
 		"exclude_query": [" ", "nan"],
-		"exclude_chart": [],
+		"exclude_chart": ["No"],
 		"units": "%",
 		"gridspace": "one",
 		"orientation": "horizontal",
@@ -1400,7 +1400,7 @@
 			"respondent_economic_sector_other",
 			"respondent_economic_sector_dont_know"
 		],
-		"chart": "line-chart"
+		"chart": "multiple-bar"
 	},
 	{
 		"slug": "main-income-earner-jobs-change",
