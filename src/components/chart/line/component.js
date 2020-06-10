@@ -46,6 +46,8 @@ const UILineChart = ({ data, config, widgetSpec }) => {
               dataKey={_category}
               key={_category}
               stroke={colors(_category, index)}
+              strokeWidth={2}
+              dot={false}
             />
           ))}
           <Legend {...legend} />
