@@ -47,6 +47,7 @@ const UIAreaChart = ({ data, config, widgetSpec }) => {
               key={_category}
               stroke={colors(_category, index)}
               fill={colors(_category, index)}
+              fillOpacity={1}
             />
           ))}
           <Legend {...legend} />

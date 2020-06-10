@@ -35,7 +35,14 @@ export const getWidgetTheme = ({ data, chart, calc, gridspace, units, iso, isMob
       vertical: false,
     },
     colors: (category, index) => colors(index),
-    xAxis,
+    xAxis: {
+      interval: 0,
+      tick: {
+        fontSize: '12px',
+        fill: '#022732',
+      },
+      tickMargin: 5,
+    },
     yAxis: {
       width: isMobileScreen ? 60 : 80,
       type: 'number',
