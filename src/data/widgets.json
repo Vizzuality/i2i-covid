@@ -1096,7 +1096,7 @@
 		"summary": false,
 		"weight": "weight_ind",
 		"calc": "percentage",
-		"exclude_query": [" ", "nan", "NONE, I CAN'T COME UP WITH THAT MONEY"],
+		"exclude_query": [" ", "nan", "NONE, I CANT COME UP WITH THAT MONEY"],
 		"exclude_chart": [],
 		"units": "%",
 		"gridspace": "one",
