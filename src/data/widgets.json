@@ -753,7 +753,7 @@
 		"orientation": "horizontal",
 		"category": "financials",
 		"order": 65,
-		"category_order": ["NO", "No - it is open and operating as usual", "No - it is open but runs out of cash", "YES", "DK/Refused"],
+		"category_order": ["NO", "No - it is open and operating as usual", "No - it is open but runs out of cash", "YES", "DK/Refused", "Don't use a local bank or money agent"],
 		"sort_by": "answer DESC",
 		"columns": [
 			"preferred_agent_open_closed"
