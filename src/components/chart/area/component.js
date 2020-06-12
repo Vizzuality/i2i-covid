@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
   ResponsiveContainer,
-  BarChart,
-  Bar,
+  AreaChart,
+  Area,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -15,9 +15,8 @@ import { useMediaQuery } from 'react-responsive';
 // constants
 import { getWidgetTheme } from './utils';
 
-const UIBarChart = ({ data, config, widgetSpec }) => {
+const UIAreaChart = ({ data, config, widgetSpec }) => {
   const isMobileScreen = useMediaQuery({ query: '(max-width: 1024px)' });
-  const { chart: chartType } = widgetSpec;
   const {
     layout,
     cartesianGrid,
@@ -30,37 +29,35 @@ const UIBarChart = ({ data, config, widgetSpec }) => {
   } = getWidgetTheme({ data, ...widgetSpec, isMobileScreen, widgetSpec });
   const { groupBy, categories, colors: colorsConfig } = config;
   const colors = colorsConfig || defaultColors;
-  const defaultBarProps = {};
-
-  if (chartType === 'stacked-bar' || chartType === 'multiple-stacked-bar') {
-    defaultBarProps.stackId = 'a';
-  }
+  const defaultBarProps = { stackId: 'a' };
 
   return (
     <div className="c-chart">
       <ResponsiveContainer {...layout}>
-        <BarChart data={data}>
+        <AreaChart data={data}>
           <CartesianGrid {...cartesianGrid} />
           <XAxis {...xAxis} dataKey={groupBy} />
           <YAxis {...yAxis} />
           <Tooltip {...tooltip} />
           {categories.map((_category, index) => (
-            <Bar
+            <Area
               {...bar}
               {...defaultBarProps}
               dataKey={_category}
               key={_category}
+              stroke={colors(_category, index)}
               fill={colors(_category, index)}
+              fillOpacity={1}
             />
           ))}
-          {chartType !== 'multiple-bar' && <Legend {...legend} />}
-        </BarChart>
+          <Legend {...legend} />
+        </AreaChart>
       </ResponsiveContainer>
     </div>
   );
 };
 
-UIBarChart.propTypes = {
+UIAreaChart.propTypes = {
   data: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   config: PropTypes.shape({
     groupBy: PropTypes.string,
@@ -79,4 +76,4 @@ UIBarChart.propTypes = {
   }).isRequired,
 };
 
-export default UIBarChart;
+export default UIAreaChart;

@@ -2,6 +2,7 @@
   display: flex;
   position: relative;
   min-height: 100vh;
+  width: 100vw;
   background-repeat: no-repeat;
   background-color: $color-1;
   background-position: center;
@@ -10,7 +11,7 @@
   @media screen and (min-width: map-get($breakpoints, lg)) {
     display: block;
     flex-direction: row;
-    background-image: url(./bg-selector-zero-Dynamic@2x.png), linear-gradient(135deg, #20727E 0%, #2F939C 100%);
+    background-image: url(./bg-selector-zero-Dynamic@2x.png), linear-gradient(135deg, #1f3266 0%, #081e5a 100%);
     background-size: 3856px 2410px;
   }
 
@@ -86,7 +87,7 @@
     .l-homepage-countries-nav {
       position: relative;
       background-repeat: no-repeat;
-      background-image: url(./mbl-bg1.png), linear-gradient($color-1 20%, #24a3af 100%, #2f939c 100%);
+      background-image: url(./mbl-bg1.png), linear-gradient($color-1 20%, #1f3266 100%, #0e1f4d 100%);
       background-color: $color-1;
       background-position: center;
       background-color: $color-1;

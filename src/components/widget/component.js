@@ -23,7 +23,6 @@ const Widget = (widgetSpec) => {
   if (error) console.error(`For widget ${title}`, error.response.data);
 
   // const responders = !!(data && data.rows.length) && data.rows[0].responders;
-
   return (
     <div className="c-widget">
       <div className="widget-header">

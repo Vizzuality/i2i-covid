@@ -11,7 +11,6 @@ const defaultLegend = {
 
 export const getWidgetTheme = ({ data, chart, calc, gridspace, units, iso, isMobileScreen }) => {
   let legend = { ...defaultLegend };
-  let xAxis;
 
   if (gridspace === 'one' && !isMobileScreen) {
     legend = {
@@ -26,17 +25,6 @@ export const getWidgetTheme = ({ data, chart, calc, gridspace, units, iso, isMob
     };
   }
 
-  if (chart !== 'multiple-stacked-bar') {
-    xAxis = {
-      axisLine: false,
-      tickLine: false,
-      tick: {
-        fontSize: '13px',
-        fill: '#022732',
-      },
-    };
-  }
-
   return {
     layout: { width: '100%', height: 500 },
     cartesianGrid: {
@@ -47,7 +35,7 @@ export const getWidgetTheme = ({ data, chart, calc, gridspace, units, iso, isMob
     },
     colors: (category, index) => colors(index),
     xAxis: {
-      interval: 0,
+      interval: 'preserveStartEnd',
       tick: {
         fontSize: '12px',
         fill: '#022732',

@@ -47,7 +47,6 @@ export const getWidgetTheme = ({ data, chart, calc, gridspace, units, iso, isMob
     },
     colors: (category, index) => colors(index),
     xAxis: {
-      interval: 0,
       tick: {
         fontSize: '12px',
         fill: '#022732',
