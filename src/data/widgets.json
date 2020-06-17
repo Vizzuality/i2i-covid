@@ -946,13 +946,13 @@
 		"weight": "weight_ind",
 		"calc": "percentage",
 		"exclude_query": [" ", "nan"],
-		"exclude_chart": [],
+		"exclude_chart": ["NO", "DK/Refused"],
 		"units": "%",
 		"gridspace": "half",
 		"orientation": "horizontal",
 		"category": "financials",
 		"order": 63,
-		"category_order": ["YES", "NO", "DK/Refused"],
+		"category_order": ["YES"],
 		"sort_by": "answer DESC",
 		"columns": [
 			"account_use_trends"
