@@ -647,7 +647,7 @@
 		"orientation": "horizontal",
 		"category": "financials",
 		"order": 59,
-		"category_order": ["Equivalent value in cash", "7 days worth of maize", "7 days worth of maize or mielie meal", "7 days worth of rice", "INDIFFERENT / DON'T MIND", "DK/Refused"],
+		"category_order": ["Equivalent value in cash", "7 days worth of food staple", "INDIFFERENT / DON'T MIND", "DK/Refused"],
 		"sort_by": "value ASC",
 		"columns": [
 			"govt_support_preference"
