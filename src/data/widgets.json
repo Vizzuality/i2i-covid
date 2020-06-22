@@ -284,7 +284,7 @@
 	{
 		"slug": "understanding-of-covid-19-1",
 		"title": "Understanding of Covid-19",
-		"hint": null,
+		"hint": "Medical-related",
 		"published": true,
 		"summary": true,
 		"weight": "weight_ind",
@@ -308,7 +308,7 @@
 	{
 		"slug": "understanding-of-covid-19-2",
 		"title": "Understanding of Covid-19",
-		"hint": null,
+		"hint": "Non-medical-related",
 		"published": true,
 		"summary": true,
 		"weight": "weight_ind",
