@@ -6,7 +6,8 @@ import Component from './component';
 const mapStateToProps = (state) => ({
   location: state.location,
   iso: state.location.payload.iso,
-  filters: state.filters
+  query: state.location.search,
+  filters: state.filters,
 });
 
 const mapDispatchToProps = {

@@ -9,12 +9,38 @@ import DownloadForm from 'components/download-form';
 import Subscribe from 'components/subscribe';
 import PageSwitch from 'components/page-switch';
 import { fetchCountries } from 'services/countries';
-import { fetchTotalSize } from 'services/indicators';
+import { fetchTotalSize, fetchTotalSizeByFilter } from 'services/indicators';
 import { formatNumber } from 'utils/numbers';
 
-const Hero = ({ iso, page }) => {
+const Hero = ({location, iso, page }) => {
+ 
   const [{ data }] = useAxios(fetchCountries());
-  const [{ data: dataSize }] = useAxios(fetchTotalSize(iso));
+  var fetchTotalSizeApi = null;
+
+  if(location.hasOwnProperty('query')){
+    var locationQuery = "";
+
+    for (var prop in location.query) {
+      if (Object.prototype.hasOwnProperty.call(location.query, prop)) {
+        var r = location.query[prop].toString().split(',');
+        let rs = '';
+        r.map((item) =>{
+          return rs = rs + "'" + item + "',";
+        });
+        locationQuery = locationQuery + " AND " + prop + " IN (" + rs.substring(0, rs.length - 1) + ")";
+      }
+    }
+
+    fetchTotalSizeApi = fetchTotalSizeByFilter(iso, Object.keys(location.query).toString(), locationQuery);
+  }
+  else{
+    fetchTotalSizeApi = fetchTotalSize(iso);
+  }
+
+  
+
+  const [{ data: dataSize }] = useAxios(fetchTotalSizeApi);
+
   const totalSize = dataSize && dataSize.total_rows;
 
   const countries = data && data.rows ? data.rows : null;

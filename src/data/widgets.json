@@ -23,7 +23,8 @@
 			"covid19_induced_behaviour_changes_other",
 			"covid19_induced_behaviour_changes_dont_know"
 		],
-		"chart": "line-chart"
+		"chart": "line-chart",
+		"question": "How have you changed your behaviour since learning about Coronavirus or Covid-19 or Corona?"
 	},
 	{
 		"slug": "covid-19-induced-behaviour-changes-2",
@@ -50,7 +51,8 @@
 			"covid19_induced_behaviour_changes_avoid_elderly",
 			"covid19_induced_behaviour_changes_avoid_clinic_or_hospital"
 		],
-		"chart": "line-chart"
+		"chart": "line-chart",
+		"question": "How have you changed your behaviour since learning about Coronavirus or Covid-19 or Corona?"
 	},
 	{
 		"slug": "existing-chronic-illness",
@@ -72,7 +74,8 @@
 		"columns": [
 			"chronic_illness"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Do you have a chronic disease such as HIV, TB, diabetes, high blood pressure?"
 	},
 	{
 		"slug": "change-in-ease-of-access-to-medicine",
@@ -94,7 +97,8 @@
 		"columns": [
 			"ease_of_medical_care"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Is it easier, the same or harder to get medicines or medical care than it was before March 1st?"
 	},
 	{
 		"slug": "access-to-medicine",
@@ -116,7 +120,8 @@
 		"columns": [
 			"access_to_medicine"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Have you needed medicine in the past 7 days and could not get it?"
 	},
 	{
 		"slug": "reasons-for-not-having-access-to-medicine",
@@ -146,7 +151,8 @@
 			"reasons_for_not_accessing_medicine_dont_know",
 			"reasons_for_not_accessing_medicine_refused"
 		],
-		"chart": "line-chart"
+		"chart": "line-chart",
+		"question": "Why could you not get medicine? Is it because…"
 	},
 	{
 		"slug": "price-of-basics",
@@ -169,7 +175,8 @@
 			"price_of_milk",
 			"price_of_soap"
 		],
-		"chart": "single-bar"
+		"chart": "single-bar",
+		"question": "How much, in (local currency), do you estimate it currently costs to buy "
 	},
 	{
 		"slug": "change-in-cost-of-medicine",
@@ -191,7 +198,8 @@
 		"columns": [
 			"change_in_cost_of_medicine"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Compared to before March 1st, how much does it cost to buy medicine? Is it a…"
 	},
 	{
 		"slug": "relative-food-availability",
@@ -213,7 +221,8 @@
 		"columns": [
 			"relative_food_availability"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Compared to this season last year, would you say the amount of food needed to prepare common meals that’s available at your local market is a...?"
 	},
 	{
 		"slug": "past-7-days-meals-eaten",
@@ -235,7 +244,8 @@
 		"columns": [
 			"eaten_fewer_meals"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "How many days in the past 7 days have you or any household member eaten fewer meals in a day because there was not enough food?"
 	},
 	{
 		"slug": "change-in-chronic-care",
@@ -257,7 +267,8 @@
 		"columns": [
 			"change_in_chronic_care"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Have you changed the way you get care for Chronic diseases such as HIV, TB, diabetes, high blood pressure?"
 	},
 	{
 		"slug": "change-in-ease-of-getting-contraceptives",
@@ -279,7 +290,8 @@
 		"columns": [
 			"change_in_ease_of_getting_contraceptives"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "In your community, is it easier, the same or harder to get family planning tools such as condoms, birth control pills or injections than it was before March 1st?"
 	},
 	{
 		"slug": "understanding-of-covid-19-1",
@@ -293,7 +305,7 @@
 		"exclude_chart": ["No"],
 		"units": "%",
 		"gridspace": "half",
-		"orientation": "horizontal",
+		"orientation": "vertical",
 		"category": "health",
 		"order": 1,
 		"waves": 2,
@@ -303,7 +315,8 @@
 			"understanding_of_covid19_not_real",
 			"understanding_of_covid19_dont_know"
 		],
-		"chart": "line-chart"
+		"chart": "line-chart",
+		"question": "As far as you know, what would you say Coronavirus or Covid-19 or Corona is?"
 	},
 	{
 		"slug": "understanding-of-covid-19-2",
@@ -327,7 +340,8 @@
 			"understanding_of_covid19_punishment_from_god",
 			"understanding_of_covid19_other"
 		],
-		"chart": "line-chart"
+		"chart": "line-chart",
+		"question": "As far as you know, what would you say Coronavirus or Covid-19 or Corona is?"
 	},
 	{
 		"slug": "increase-in-household-care-due-to-covid-19",
@@ -349,7 +363,8 @@
 		"columns": [
 			"increase_in_household_care_due_to_covid19"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Is anyone in your household caring for others during the day as a result of Coronavirus or Covid-19 or Corona?"
 	},
 	{
 		"slug": "time-spent-caring-for-others",
@@ -369,7 +384,8 @@
 		"columns": [
 			"time_spent_caring_for_others"
 		],
-		"chart": "single-bar"
+		"chart": "single-bar",
+		"question": "Over the past 24 hours, how many hours did you spend caring for other members of your household?"
 	},
 	{
 		"slug": "travel-within-past-two-weeks",
@@ -391,7 +407,8 @@
 		"columns": [
 			"past_14_days_travel"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "In the past 14 days have you travelled outside your town, village or city?"
 	},
 	{
 		"slug": "gvt-travel-restriction",
@@ -413,7 +430,8 @@
 		"columns": [
 			"travel_restriction"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Are there currently any official travel restrictions that prevent you from leaving your town, village or city?"
 	},
 	{
 		"slug": "moved-location-since-march-1st",
@@ -435,7 +453,8 @@
 		"columns": [
 			"moved_location_since_march_1st"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Do you now live in a different town, village or city than you lived on March 1st?"
 	},
 	{
 		"slug": "amount-willing-to-pay-for-covid-19-vaccine",
@@ -455,7 +474,8 @@
 		"columns": [
 			"amount_willing_to_pay_for_covid19_vaccine"
 		],
-		"chart": "single-bar"
+		"chart": "single-bar",
+		"question": ""
 	},
 	{
 		"slug": "likeliness-to-seek-medical-attention-for-mild-symptoms",
@@ -477,7 +497,8 @@
 		"columns": [
 			"likeliness_to_seek_medical_attention_mild_symptoms"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "How likely would you be to seek medical care for coronavirus if you had mild symptoms such as cough or fever? Would you be…"
 	},
 	{
 		"slug": "number-of-contacts",
@@ -499,7 +520,8 @@
 			"number_of_contacts_with_working_age_adults",
 			"number_of_contacts_with_elderly"
 		],
-		"chart": "line-chart"
+		"chart": "line-chart",
+		"question": "How many contacts did you have yesterday with…"
 	},
 	{
 		"slug": "religious-group-attendance",
@@ -519,7 +541,8 @@
 		"columns": [
 			"past_14_days_religious_group_attendance"
 		],
-		"chart": "single-bar"
+		"chart": "single-bar",
+		"question": "How many times have you attended group religious activities in person in the past 14 days?"
 	},
 	{
 		"slug": "where-children-stay-when-school-is-closed",
@@ -542,7 +565,8 @@
 		"columns": [
 			"where_children_stay_when_school_is_closed"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Where do your children mainly stay during the day when schools are closed?"
 	},
 	{
 		"slug": "safety-worries",
@@ -564,7 +588,8 @@
 		"columns": [
 			"safety_worries"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "On a scale of 1 to 5 where 1 is not at all and 5 is extremely worried, how worried are you about your personal safety and the safety of your family?"
 	},
 	{
 		"slug": "likelihood_to_go_out_at_night",
@@ -586,7 +611,8 @@
 		"columns": [
 			"increase_in_crime"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Has crime increased, stayed the same or decreased in the past 14 days?"
 	},
 	{
 		"slug": "applications-to-economic-support",
@@ -608,7 +634,8 @@
 		"columns": [
 			"emergency_money_support"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "During the past 30 days, have you or anyone in your household received emergency government support in the form of money?"
 	},
 	{
 		"slug": "applications-to-food-support",
@@ -630,7 +657,8 @@
 		"columns": [
 			"emergency_food_support"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "During the past 30 days, have you or anyone in your household received emergency government support in the form of food?"
 	},
 	{
 		"slug": "government-support-preference",
@@ -652,7 +680,8 @@
 		"columns": [
 			"govt_support_preference"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "If the government were to provide you support, would you prefer…?"
 	},
 	{
 		"slug": "difficulty-accessing-government-support",
@@ -674,7 +703,8 @@
 		"columns": [
 			"difficulty_accessing_government_support"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Have you or anyone in your household had difficulty accessing any type of government support?"
 	},
 	{
 		"slug": "bribes-to-get-government-support",
@@ -696,7 +726,8 @@
 		"columns": [
 			"need_to_pay_bribes_to_get_government_support"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Do people in your community need to pay bribes, gifts or favours to get emergency government support? Would you say this is…?"
 	},
 	{
 		"slug": "government-support-during-past-moth",
@@ -716,7 +747,8 @@
 		"columns": [
 			"past_30_days_value_of_govt_support"
 		],
-		"chart": "single-bar"
+		"chart": "single-bar",
+		"question": "What is the total value of money and goods received by your household from the government in the past 30 days, in (local currency)? This also includes food, social grants, pensions, and other transfers or payments."
 	},
 	{
 		"slug": "amount-willing-to-accept-to-stay-home",
@@ -736,7 +768,8 @@
 		"columns": [
 			"amount_willing_to_accept_to_stay_home"
 		],
-		"chart": "single-bar"
+		"chart": "single-bar",
+		"question": "If the government or an NGO was to give you money to stay home and avoid leaving your home or property for the next 7 days, what is the least amount of money, in (local currency), that you would accept to do this?"
 	},
 	{
 		"slug": "preferred-agent-availability",
@@ -758,7 +791,8 @@
 		"columns": [
 			"preferred_agent_open_closed"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Is your preferred local bank or money agent currently closed for business or short of cash?"
 	},
 	{
 		"slug": "change-in-agent-fee",
@@ -780,7 +814,8 @@
 		"columns": [
 			"change_in_agent_fee"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Compared to before March 1st, how have the fees charged by the bank or mobile money agent you usually use changed? Is this…"
 	},
 	{
 		"slug": "difficulty-sending-receiving-cash",
@@ -802,7 +837,8 @@
 		"columns": [
 			"difficulty_sending_receiving_cash"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Have you had any difficulties sending or receiving cash through your preferred local bank or money agent in the past 14 days?"
 	},
 	{
 		"slug": "recent-borrowing",
@@ -824,7 +860,8 @@
 		"columns": [
 			"recent_borrowing"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Have you borrowed money in the past 14 days?"
 	},
 	{
 		"slug": "Source-of-borrowing",
@@ -860,7 +897,8 @@
 			"source_of_borrowing_dont_know",
 			"source_of_borrowing_refused"
 		],
-		"chart": "line-chart"
+		"chart": "line-chart",
+		"question": "Where did you borrow from?"
 	},
 	{
 		"slug": "missed-repayment",
@@ -882,7 +920,8 @@
 		"columns": [
 			"missed_repayment"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Have you missed a loan repayment or stopped paying a loan in the past 14 days?"
 	},
 	{
 		"slug": "reason-for-missed-payment",
@@ -911,7 +950,8 @@
 			"reason_for_missed_payment_other",
 			"reason_for_missed_payment_refused"
 		],
-		"chart": "line-chart"
+		"chart": "line-chart",
+		"question": "Why did you miss a payment? Is this because..."
 	},
 	{
 		"slug": "account-use-trends",
@@ -934,7 +974,8 @@
 		"columns": [
 			"account_use_trends"
 		],
-		"chart": "stacked-bar"
+		"chart": "stacked-bar",
+		"question": "Have you used your [relevant financial service] in the past 30 days?"
 	},
 	{
 		"slug": "account-use-trends",
@@ -957,7 +998,8 @@
 		"columns": [
 			"account_use_trends"
 		],
-		"chart": "stacked-bar"
+		"chart": "stacked-bar",
+		"question": ""
 	},
 	{
 		"slug": "past-7-days-hours-worked",
@@ -977,7 +1019,8 @@
 		"columns": [
 			"past_7_days_hours_worked"
 		],
-		"chart": "single-bar"
+		"chart": "single-bar",
+		"question": "Speaking about yourself, how many hours did you work for pay, food, or shelter in the past 7 days?"
 	},
 	{
 		"slug": "past-7-days-hours-earned",
@@ -997,7 +1040,8 @@
 		"columns": [
 			"past_7_days_hours_earned"
 		],
-		"chart": "single-bar"
+		"chart": "single-bar",
+		"question": "How much money did you earn in the past 7 days?"
 	},
 	{
 		"slug": "1-yr-income-comparison",
@@ -1019,7 +1063,8 @@
 		"columns": [
 			"one_yr_income_comparison"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "How does the amount of money you made in the past 7 days compare to the amount you made this time last year? Is it…"
 	},
 	{
 		"slug": "asset-sales-since-march-1st",
@@ -1041,7 +1086,8 @@
 		"columns": [
 			"sold_assets"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Since March 1st, has anyone in your household sold any assets from your house?"
 	},
 	{
 		"slug": "living-expenses-sources",
@@ -1063,7 +1109,8 @@
 		"columns": [
 			"current_living_cost_source"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Currently what is your main source of funds to pay for your living expenses?"
 	},
 	{
 		"slug": "financia-health-access-to-support",
@@ -1085,7 +1132,8 @@
 		"columns": [
 			"finhealth_possibility"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "How possible is it for you to come up with [1/20th of GNI per capita] in 7 days for a sudden need? Is it…"
 	},
 	{
 		"slug": "financia-health-support-sources",
@@ -1107,7 +1155,8 @@
 		"columns": [
 			"finhealth_sources"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "If you had to come up with 1/20th GNI PER CAPITA in 7 days for a sudden need what would be your main source of funds?"
 	},
 	{
 		"slug": "change-in-waiting-time-to-see-agent",
@@ -1128,7 +1177,8 @@
 		"columns": [
 			"time_spent_at_agent"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Compared to before March 1st, how has the time you needed to wait to use the bank or mobile money agent you usually use changed? Is this…"
 	},
 	{
 		"slug": "main-way-of-sending-money",
@@ -1149,7 +1199,8 @@
 		"columns": [
 			"how_money_sent"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "What is the main way you send money?"
 	},
 	{
 		"slug": "main-way-of-receiving-money",
@@ -1170,7 +1221,8 @@
 		"columns": [
 			"how_money_recieved"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "What is the main way you receive money?"
 	},
 	{
 		"slug": "value-of-remittances",
@@ -1192,7 +1244,8 @@
 			"value_of_remittances_received",
 			"value_of_remittances_sent"
 		],
-		"chart": "line-chart"
+		"chart": "line-chart",
+		"question": "What is the total value of money and goods, in (local currency), sent by you or anyone in your household to people outside your household in the past 14 days?\nWhat is the total value of money and goods, in (local currency), received by you or anyone in your household from people outside your household in the past 14 days?"
 	},
 	{
 		"slug": "main-income-earner-primary-income-source",
@@ -1214,7 +1267,8 @@
 		"columns": [
 			"main_income_earner_primary_income_source"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Which of the following best describes the way the main income earner made money before March 1st?"
 	},
 	{
 		"slug": "respondent-primary-income-source",
@@ -1236,7 +1290,8 @@
 		"columns": [
 			"respondent_primary_income_source"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Which of the following best describes the way that you are currently making money?"
 	},
 	{
 		"slug": "farm-labour-changes",
@@ -1258,7 +1313,8 @@
 		"columns": [
 			"farm_labour_changes"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "During the past 7 days, about how many workers from outside your household were employed for farming compared to the same time last year? Is it…"
 	},
 	{
 		"slug": "ease-of-selling-crops",
@@ -1280,7 +1336,8 @@
 		"columns": [
 			"ease_of_selling_crops"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Compared to the same season last year, how difficult is it to sell your crops or livestock? Is it…"
 	},
 	{
 		"slug": "economic-sector",
@@ -1318,7 +1375,8 @@
 			"current_economic_sector_other",
 			"current_economic_sector_dont_know"
 		],
-		"chart": "multiple-bar"
+		"chart": "multiple-bar",
+		"question": "Which of these areas is the main earner's business in? Is it..."
 	},
 	{
 		"slug": "hh-main-business-challenge",
@@ -1341,7 +1399,8 @@
 		"columns": [
 			"biggest_business_challenge"
 		],
-		"chart": "stacked-bar"
+		"chart": "stacked-bar",
+		"question": "Which of the following is the biggest challenge for this business since March 1st?"
 	},
 	{
 		"slug": "respondent-main-business-challenge",
@@ -1363,7 +1422,8 @@
 		"columns": [
 			"respondent_biggest_business_challenge"
 		],
-		"chart": "stacked-bar"
+		"chart": "stacked-bar",
+		"question": "Which of the following is the biggest challenge for this business since March 1st?"
 	},
 	{
 		"slug": "economic-sector-of-respondent",
@@ -1401,7 +1461,8 @@
 			"respondent_economic_sector_other",
 			"respondent_economic_sector_dont_know"
 		],
-		"chart": "multiple-bar"
+		"chart": "multiple-bar",
+		"question": "Which of these areas is your business in? Is it..."
 	},
 	{
 		"slug": "main-income-earner-jobs-change",
@@ -1423,7 +1484,8 @@
 		"columns": [
 			"main_income_earner_jobs_change"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Has the main earner changed jobs since March 1st?"
 	},
 	{
 		"slug": "respondent-changed-jobs",
@@ -1445,7 +1507,8 @@
 		"columns": [
 			"respondent_jobs_change"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Have you lost jobs or changed jobs since March 1st?"
 	},
 	{
 		"slug": "former-job",
@@ -1482,7 +1545,8 @@
 			"previous_economic_sector_other",
 			"previous_economic_sector_dont_know"
 		],
-		"chart": "multiple-bar"
+		"chart": "multiple-bar",
+		"question": "Which of these areas was the main earner's previous job in? Was it..."
 	},
 	{
 		"slug": "age",
@@ -1503,7 +1567,8 @@
 		"columns": [
 			"ps5_age_group"
 		],
-		"chart": "single-bar"
+		"chart": "single-bar",
+		"question": "In what year were you born?"
 	},
 	{
 		"slug": "sex",
@@ -1525,7 +1590,8 @@
 		"columns": [
 			"sex"
 		],
-		"chart": "single-bar"
+		"chart": "single-bar",
+		"question": "Are you a woman or a man?"
 	},
 	{
 		"slug": "region",
@@ -1546,7 +1612,8 @@
 		"columns": [
 			"reduced_reporting_region"
 		],
-		"chart": "single-bar"
+		"chart": "single-bar",
+		"question": "What District do you currently live in?"
 	},
 	{
 		"slug": "race",
@@ -1568,7 +1635,8 @@
 		"columns": [
 			"race"
 		],
-		"chart": "multiple-bar"
+		"chart": "multiple-bar",
+		"question": ""
 	},
 	{
 		"slug": "urban-city",
@@ -1589,7 +1657,8 @@
 		"columns": [
 			"ur"
 		],
-		"chart": "single-bar"
+		"chart": "single-bar",
+		"question": "Do you currently live in a city, urban area or rural area?"
 	},
 	{
 		"slug": "city-name",
@@ -1610,7 +1679,8 @@
 		"columns": [
 			"city_name"
 		],
-		"chart": "single-bar"
+		"chart": "single-bar",
+		"question": "What is the name of your city?"
 	},
 	{
 		"slug": "nearest-city",
@@ -1631,7 +1701,8 @@
 		"columns": [
 			"nearest_city"
 		],
-		"chart": "multiple-bar"
+		"chart": "multiple-bar",
+		"question": ""
 	},
 	{
 		"slug": "distance-to-nearest-city",
@@ -1653,7 +1724,8 @@
 		"columns": [
 			"nearest_city_distance"
 		],
-		"chart": "multiple-bar"
+		"chart": "multiple-bar",
+		"question": ""
 	},
 	{
 		"slug": "education-level",
@@ -1675,7 +1747,8 @@
 		"columns": [
 			"education_level"
 		],
-		"chart": "single-bar"
+		"chart": "single-bar",
+		"question": "What is your highest level of schooling? Is it..."
 	},
 	{
 		"slug": "relationship_status",
@@ -1697,7 +1770,8 @@
 		"columns": [
 			"relationship_status"
 		],
-		"chart": "single-bar"
+		"chart": "single-bar",
+		"question": "Are you currently…?"
 	},
 	{
 		"slug": "live_with_spouse",
@@ -1718,7 +1792,8 @@
 		"columns": [
 			"live_with_spouse"
 		],
-		"chart": "single-bar"
+		"chart": "single-bar",
+		"question": "Do you live with a spouse or partner?"
 	},
 	{
 		"slug": "household-size",
@@ -1740,7 +1815,8 @@
 		"columns": [
 			"hh_size"
 		],
-		"chart": "stacked-bar"
+		"chart": "stacked-bar",
+		"question": "Including you, currently how many people do you live with and eat with in your home?"
 	},
 	{
 		"slug": "household-children",
@@ -1761,7 +1837,8 @@
 		"columns": [
 			"children_under_5_years_old"
 		],
-		"chart": "stacked-bar"
+		"chart": "stacked-bar",
+		"question": "How many children under 5 years old are there in your home?"
 	},
 	{
 		"slug": "household-adults",
@@ -1782,7 +1859,8 @@
 		"columns": [
 			"adults_in_hh"
 		],
-		"chart": "stacked-bar"
+		"chart": "stacked-bar",
+		"question": ""
 	},
 	{
 		"slug": "household-elders",
@@ -1803,7 +1881,8 @@
 		"columns": [
 			"people_over_60_years_old"
 		],
-		"chart": "stacked-bar"
+		"chart": "stacked-bar",
+		"question": "How many people are over 60 years old in your home?"
 	},
 	{
 		"slug": "main-income-earner-sex",
@@ -1824,7 +1903,8 @@
 		"columns": [
 			"main_earner_gender"
 		],
-		"chart": "multiple-bar"
+		"chart": "multiple-bar",
+		"question": ""
 	},
 	{
 		"slug": "main-income-earner-age",
@@ -1845,7 +1925,8 @@
 		"columns": [
 			"main_earner_age_group"
 		],
-		"chart": "single-bar"
+		"chart": "single-bar",
+		"question": "In what year was the main earner born?"
 	},
 	{
 		"slug": "main-income-earner",
@@ -1867,7 +1948,8 @@
 		"columns": [
 			"main_income_earner"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": "Who is usually the main income earner in your household? By this we mean the person in the household who contributes the most income to the household, whether man or woman. Is the main income earner..."
 	},
 	{
 		"slug": "account-ownership",
@@ -1890,7 +1972,8 @@
 		"columns": [
 			"account_ownership_validation"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": ""
 	},
 	{
 		"slug": "account-ownership",
@@ -1913,7 +1996,8 @@
 		"columns": [
 			"account_ownership_validation"
 		],
-		"chart": "area-chart"
+		"chart": "area-chart",
+		"question": ""
 	},
 	{
 		"slug": "former-closest-city",
@@ -1934,6 +2018,7 @@
 		"columns": [
 			"closest_city_to_where_used_to_live"
 		],
-		"chart": "multiple-bar"
+		"chart": "multiple-bar",
+		"question": ""
 	}
 ]

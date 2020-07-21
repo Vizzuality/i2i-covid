@@ -8,7 +8,7 @@ const Modal = ({ actionsComponent, children, isOpen, onRequestClose, title, ...d
   <ReactModal className="c-modal" isOpen={isOpen} onRequestClose={onRequestClose} {...domProps}>
     <div className="container">
       <div className="row">
-        <div className="col-sm-12 cold-md-10 col-lg-8 m-auto">
+        <div className="col-sm-12 cold-md-10 col-lg-10 m-auto">
           <section className="modal-container">
             <header className="modal-header">
               {title && <h2 className="modal-title">{title}</h2>}

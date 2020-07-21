@@ -2,7 +2,7 @@ import cartoApi from 'utils/carto-api';
 
 export const fetchIndicators = (
   { title, columns, weight, calc, iso, exclude_query, sort_by },
-  filters = {}
+  filters = {}, wave = ''
 ) => {
   let query;
 
@@ -16,14 +16,14 @@ export const fetchIndicators = (
     })
     .join('');
 
-  const sortByQuery = sort_by ? `ORDER BY update_date, ${sort_by}` : 'ORDER BY update_date';
+  const sortByQuery = sort_by ? `ORDER BY ur, ${sort_by}` : 'ORDER BY ur';
 
   if (calc === 'average') {
     const selectQuery = columns
       .map((column) => `AVG(${column}::float * ${weight}) AS ${column}`)
       .join(', ');
     const valuesQuery = columns
-      .map((column) => `(a.${column}, '${column}', a.update_date)`)
+      .map((column) => `(a.${column}, '${column}', a.ur)`)
       .join(', ');
     const undefinedValues = exclude_query
       .filter((value) => String(value).toLowerCase() !== 'null')
@@ -45,19 +45,19 @@ export const fetchIndicators = (
 
     query = `
       WITH a as (
-        SELECT ${selectQuery}, update_date
+        SELECT ${selectQuery}, ur, waves_data
         FROM ${process.env.REACT_APP_DATA_TABLENAME}
-        WHERE country_iso = '${iso}' ${filtersQuery}
+        WHERE waves_data='${wave}' AND country_iso = '${iso}' ${filtersQuery}
           AND ${whereQuery}
-        GROUP BY update_date
+        GROUP BY ur
       ), b as (
         SELECT t.*
         FROM a
         CROSS JOIN LATERAL (
           VALUES ${valuesQuery}
-        ) AS t(answer, indicator, update_date)
+        ) AS t(answer, indicator, ur, waves_data)
       )
-      SELECT b.answer, b.indicator, b.update_date, m.label, b.answer AS value,
+      SELECT b.answer, b.indicator, b.ur, b.waves_data, m.label, b.answer AS value,
         COUNT(b.answer) OVER() as responders
       FROM b
       LEFT JOIN ${process.env.REACT_APP_METADATA_TABLENAME} m ON m.field_name = indicator
@@ -66,7 +66,7 @@ export const fetchIndicators = (
   } else {
     const selectQuery = columns.join(', ');
     const valuesQuery = columns
-      .map((column) => `(a.${column}, '${column}', a.${weight}, a.update_date)`)
+      .map((column) => `(a.${column}, '${column}', a.${weight}, a.ur, a.waves_data)`)
       .join(', ');
     const undefinedValues = exclude_query.map((param) => `'${param}'`);
     const whereQuery = undefinedValues.length
@@ -75,29 +75,29 @@ export const fetchIndicators = (
 
     query = `
       WITH a as (
-        SELECT ${selectQuery}, ${weight}, update_date
+        SELECT ${selectQuery}, ${weight}, ur, waves_data
         FROM ${process.env.REACT_APP_DATA_TABLENAME}
-        WHERE country_iso = '${iso}' ${filtersQuery}
+        WHERE waves_data='${wave}' AND country_iso = '${iso}' ${filtersQuery}
       ), b as (
         SELECT t.*
         FROM a
         CROSS JOIN LATERAL (
           VALUES ${valuesQuery}
-        ) AS t(answer, indicator, ${weight}, update_date)
+        ) AS t(answer, indicator, ${weight}, ur, waves_data)
       ), c as (
-        SELECT b.answer, b.indicator, b.${weight}, b.update_date, m.label
+        SELECT b.answer, b.indicator, b.${weight}, b.ur, b.waves_data, m.label
         FROM b
         LEFT JOIN ${process.env.REACT_APP_METADATA_TABLENAME} m ON m.field_name = indicator
       ), d as (
-        SELECT answer, indicator, label, update_date,
+        SELECT answer, indicator, label, ur, waves_data,
           SUM(${weight}) AS value,
           count(answer) AS responders
         FROM c
         WHERE ${whereQuery} ${weight} != 'NaN'
-        GROUP BY answer, indicator, update_date, label
+        GROUP BY answer, indicator, ur, waves_data, label
       )
-      SELECT d.answer, d.indicator, d.label, d.update_date,
-        (d.value * 100 / SUM(d.value) OVER(PARTITION BY indicator, update_date)) as value,
+      SELECT d.answer, d.indicator, d.label, d.ur, d.waves_data,
+        (d.value * 100 / SUM(d.value) OVER(PARTITION BY indicator, ur)) as value,
         SUM(d.responders) OVER() AS responders
       FROM d
       ${sortByQuery}
@@ -118,18 +118,9 @@ export const fetchAllData = ({ format = 'json' }) => {
 
 export const fetchTotalSize = (iso) => {
   const query = `
-  SELECT update_date
+  SELECT ur
   FROM ${process.env.REACT_APP_DATA_TABLENAME}
   WHERE country_iso = '${iso}'`;
-  return cartoApi(query);
-};
-
-export const fetchTotalSizeByFilter = (iso, options, conditions) => {
-  const query = `
-  SELECT update_date, ${options}
-  FROM ${process.env.REACT_APP_DATA_TABLENAME}
-  WHERE country_iso = '${iso}' ${conditions}`;
-
   return cartoApi(query);
 };
 
