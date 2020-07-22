@@ -27,7 +27,7 @@ const Compare = ({ slug, iso, query, filters, widgetSpec }) => {
       .then(({ data }) => {
         setCurrentWaves(data.rows);
       })
-  });
+  }, [iso]);
 
 
   const [{ data: dataCountry }] = useAxios(fetchCountries());
@@ -35,7 +35,7 @@ const Compare = ({ slug, iso, query, filters, widgetSpec }) => {
   const [countryOption, setCountryOption] = useState('');
 
   const current = countries ? countries.find((country) => country.iso === iso) : null;
-  
+
   const [{ data, loading, error }] = useAxios(fetchIndicators(widgetSpec, filters));
   var widgetProps = data && getWidgetProps(data.rows, widgetSpec);
   const [activeChart, setActiveChart] = useState(null);
@@ -144,7 +144,7 @@ const Compare = ({ slug, iso, query, filters, widgetSpec }) => {
                 )}
               </div>
               <div className="row">
-                {selectedCountry ? 
+                {selectedCountry ?
                   (compareWaves.length === 0 ? (
                     foundWaves === 0 ? <p>No waves found for this country</p> : (foundWaves > 0 ? <Spinner /> : <div className="alert alert-warning">Something went wrong. Please refresh page</div>)
                   ) : (
@@ -175,7 +175,7 @@ const Compare = ({ slug, iso, query, filters, widgetSpec }) => {
               <div className="alert alert-info">There is no data for this widget.</div>
             )}
           </div>
-        </div> 
+        </div>
       </Modal>
     </div>
   );
