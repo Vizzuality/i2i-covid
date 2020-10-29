@@ -4,7 +4,7 @@ const DownloadForm = () => (
   <div className="c-download-form">
     <a
       className="typeform-share link c-button -border-color-1"
-      href="https://i2ifacility.typeform.com/to/OC79X4"
+      href="https://finmark.typeform.com/to/OC79X4"
       datamode="drawer_left"
       data-hide-headers
       data-hide-footer
